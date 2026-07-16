@@ -9,16 +9,26 @@ function toggleMobile(){
 function handleNewsletterSubmit(e){
   e.preventDefault();
   const form = e.target;
-  fetch('/', {
+  
+  // Use the current page path so Netlify accurately maps the form submission
+  const postUrl = window.location.pathname || '/';
+
+  fetch(postUrl, {
     method: 'POST',
     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     body: new URLSearchParams(new FormData(form)).toString()
   }).then(()=>{
-    document.getElementById('newsletterWrap').style.display='none';
-    document.getElementById('newsletterSuccess').style.display='block';
-  }).catch(()=>{
-    document.getElementById('newsletterWrap').style.display='none';
-    document.getElementById('newsletterSuccess').style.display='block';
+    const wrap = document.getElementById('newsletterWrap');
+    const success = document.getElementById('newsletterSuccess');
+    if (wrap) wrap.style.display = 'none';
+    if (success) success.style.display = 'block';
+  }).catch((error)=>{
+    console.error('Newsletter submission error:', error);
+    // Graceful fallback: still show the success state to the user
+    const wrap = document.getElementById('newsletterWrap');
+    const success = document.getElementById('newsletterSuccess');
+    if (wrap) wrap.style.display = 'none';
+    if (success) success.style.display = 'block';
   });
 }
 

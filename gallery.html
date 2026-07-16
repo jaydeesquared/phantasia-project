@@ -119,43 +119,54 @@
     </div>
     <div class="gallery-grid" id="galleryGrid"></div>
 
-    <!-- FIXED: Removed data-netlify="true" from active visible form to prevent Netlify parser conflicts -->
+    <!-- ACTIVE FORM -->
     <form class="gallery-submit" id="gallerySubmitWrap" name="gallery" method="POST" onsubmit="handleGallerySubmit(event)">
       <input type="hidden" name="form-name" value="gallery">
-      <h2>Add your experience</h2>
-      <p>Entries are reviewed before going live - usually within 48 hours. Your email is private and only used to notify you when yours appears.</p>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;font-size:.875rem;font-style:italic;color:var(--text);margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:.6rem">
-        <span style="color:var(--violet-light);font-style:normal;font-size:1.2rem;flex-shrink:0;margin-top:-.1rem">❝</span>
-        <span id="galleryFormPrompt">Close your eyes. Picture an apple. Describe exactly what happens.</span>
+      
+      <!-- Container holding all entry fields so they can be hidden neatly on submit -->
+      <div id="galleryFormFields">
+        <h2>Add your experience</h2>
+        <p>Entries are reviewed before going live - usually within 48 hours. Your email is private and only used to notify you when yours appears.</p>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;font-size:.875rem;font-style:italic;color:var(--text);margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:.6rem">
+          <span style="color:var(--violet-light);font-style:normal;font-size:1.2rem;flex-shrink:0;margin-top:-.1rem">❝</span>
+          <span id="galleryFormPrompt">Close your eyes. Picture an apple. Describe exactly what happens.</span>
+        </div>
+        
+        <p style="font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Your result type</p>
+        <div class="gallery-type-select" id="galleryTypeSelect">
+          <button type="button" class="gallery-type-btn" data-type="Aphantasia" data-color="#f43f5e" onclick="selectGalleryType(this)" style="border-color:rgba(244,63,94,.3)">⬛ Aphantasia</button>
+          <button type="button" class="gallery-type-btn" data-type="Low Phantasia" data-color="#F59E0B" onclick="selectGalleryType(this)" style="border-color:rgba(245,158,11,.3)">🌑 Low Phantasia</button>
+          <button type="button" class="gallery-type-btn" data-type="Phantasia" data-color="#4ade80" onclick="selectGalleryType(this)" style="border-color:rgba(74,222,128,.3)">🌗 Phantasia</button>
+          <button type="button" class="gallery-type-btn" data-type="Vivid Phantasia" data-color="#06B6D4" onclick="selectGalleryType(this)" style="border-color:rgba(6,182,212,.3)">🌕 Vivid Phantasia</button>
+          <button type="button" class="gallery-type-btn" data-type="Hyperphantasia" data-color="#10f2c8" onclick="selectGalleryType(this)" style="border-color:rgba(16,242,200,.3)">⭐ Hyperphantasia</button>
+        </div>
+        
+        <div class="gallery-textarea-wrap">
+          <textarea class="gallery-textarea" id="galleryText" name="text" placeholder="Describe what happens when you picture the apple..." maxlength="200" oninput="updateGalleryChar()" rows="4"></textarea>
+        </div>
+        <div class="gallery-char-counter" id="galleryCharCount">0 / 200</div>
+        <div id="galleryHint" style="font-size:.78rem;color:var(--muted);margin-bottom:1rem;margin-top:-.3rem">Keep it to one moment - what actually happens when you try.</div>
+        
+        <div class="gallery-fields-row">
+          <input class="gallery-input" id="galleryName" name="name" type="text" placeholder="First name (e.g. Alex)" maxlength="30">
+          <input class="gallery-input" id="galleryCountry" name="country" type="text" placeholder="Country (optional)" maxlength="30">
+        </div>
+        
+        <input class="gallery-input" id="galleryEmail" name="email" type="email" placeholder="Email - private, only used to notify you when your entry goes live" style="width:100%;margin-bottom:1.25rem">
+        
+        <div class="gallery-submit-row">
+          <div class="gallery-privacy">🔒 Your email is never shown publicly.<br>Entries are reviewed before appearing.</div>
+          <button class="btn btn-primary" type="submit">Submit entry →</button>
+        </div>
       </div>
-      <p style="font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Your result type</p>
-      <div class="gallery-type-select" id="galleryTypeSelect">
-        <button type="button" class="gallery-type-btn" data-type="Aphantasia" data-color="#f43f5e" onclick="selectGalleryType(this)" style="border-color:rgba(244,63,94,.3)">⬛ Aphantasia</button>
-        <button type="button" class="gallery-type-btn" data-type="Low Phantasia" data-color="#F59E0B" onclick="selectGalleryType(this)" style="border-color:rgba(245,158,11,.3)">🌑 Low Phantasia</button>
-        <button type="button" class="gallery-type-btn" data-type="Phantasia" data-color="#4ade80" onclick="selectGalleryType(this)" style="border-color:rgba(74,222,128,.3)">🌗 Phantasia</button>
-        <button type="button" class="gallery-type-btn" data-type="Vivid Phantasia" data-color="#06B6D4" onclick="selectGalleryType(this)" style="border-color:rgba(6,182,212,.3)">🌕 Vivid Phantasia</button>
-        <button type="button" class="gallery-type-btn" data-type="Hyperphantasia" data-color="#10f2c8" onclick="selectGalleryType(this)" style="border-color:rgba(16,242,200,.3)">⭐ Hyperphantasia</button>
-      </div>
-      <div class="gallery-textarea-wrap">
-        <textarea class="gallery-textarea" id="galleryText" name="text" placeholder="Describe what happens when you picture the apple..." maxlength="200" oninput="updateGalleryChar()" rows="4"></textarea>
-      </div>
-      <div class="gallery-char-counter" id="galleryCharCount">0 / 200</div>
-      <div id="galleryHint" style="font-size:.78rem;color:var(--muted);margin-bottom:1rem;margin-top:-.3rem">Keep it to one moment - what actually happens when you try.</div>
-      <div class="gallery-fields-row">
-        <input class="gallery-input" id="galleryName" name="name" type="text" placeholder="First name (e.g. Alex)" maxlength="30">
-        <input class="gallery-input" id="galleryCountry" name="country" type="text" placeholder="Country (optional)" maxlength="30">
-      </div>
-      <input class="gallery-input" id="galleryEmail" name="email" type="email" placeholder="Email - private, only used to notify you when your entry goes live" style="width:100%;margin-bottom:1.25rem">
-      <div class="gallery-submit-row">
-        <div class="gallery-privacy">🔒 Your email is never shown publicly.<br>Entries are reviewed before appearing.</div>
-        <button class="btn btn-primary" type="submit">Submit entry →</button>
-      </div>
-      <div class="gallery-pending" id="galleryPending">
+
+      <!-- Clear Success State Container -->
+      <div class="gallery-pending" id="galleryPending" style="display:none">
         <h3>✦ Submitted - thank you</h3>
         <p>Your experience is in the queue. Entries are reviewed before going live - usually within 48 hours. We'll email you when yours appears.</p>
       </div>
     </form>
-    <div class="gallery-removal">Want an entry removed? <a href="mailto:hello@mindseye.info?subject=Entry removal request">Email us</a> and we'll take it down within 24 hours.</div>
+    <div class="gallery-removal">Want an entry removed? <a href="mailto:thephantasiaproject@gmail.com?subject=Entry removal request">Email us</a> and we'll take it down within 24 hours.</div>
   </div>
 
 </div>
@@ -168,7 +179,6 @@
       <h2>New posts and videos,<br>straight to your inbox</h2>
       <p>No noise — just new updates, video drops, and the occasional piece of research worth knowing about. Free, obviously. Unsubscribe any time.</p>
       <div id="newsletterWrap">
-        <!-- FIXED: Removed data-netlify="true" from active visible form to prevent Netlify parser conflicts -->
         <form name="newsletter" method="POST" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
           <input type="hidden" name="form-name" value="newsletter">
           <input class="newsletter-input" type="email" name="email" id="newsletterEmail" placeholder="your@email.com" autocomplete="email" required>
@@ -197,11 +207,11 @@
         <p>A free, open information hub for the full imagination spectrum - from aphantasia to hyperphantasia.</p>
         <div class="footer-social">
           <!-- TikTok -->
-          <a class="social-link" href="https://tiktok.com/@mindseye" target="_blank" rel="noopener" title="TikTok">
+          <a class="social-link" href="https://tiktok.com/@thephantasiaproject" target="_blank" rel="noopener" title="TikTok">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.16 8.16 0 004.78 1.53V6.82a4.85 4.85 0 01-1.01-.13z"/></svg>
           </a>
           <!-- Instagram -->
-          <a class="social-link" href="https://instagram.com/mindseye" target="_blank" rel="noopener" title="Instagram">
+          <a class="social-link" href="https://instagram.com/thephantasiaproject" target="_blank" rel="noopener" title="Instagram">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
           <!-- YouTube -->
@@ -230,8 +240,8 @@
         <h4>Content</h4>
         <ul class="footer-links">
           <li><a href="videos.html">Videos</a></li>
-          <li><a href="https://tiktok.com/@mindseye" target="_blank" rel="noopener">TikTok</a></li>
-          <li><a href="https://instagram.com/mindseye" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://tiktok.com/@thephantasiaproject" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://instagram.com/thephantasiaproject" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener">YouTube</a></li>
         </ul>
       </div>
@@ -240,9 +250,9 @@
       <div class="footer-col footer-contact">
         <h4>Contact</h4>
         <p>Questions, research suggestions, or your own story to share? Get in touch.</p>
-        <a class="footer-email" href="mailto:hello@mindseye.info">
+        <a class="footer-email" href="mailto:thephantasiaproject@gmail.com">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          hello@mindseye.info
+          thephantasiaproject@gmail.com
         </a>
         <p style="margin-top:1rem">Or find us on socials - we read every message.</p>
       </div>
@@ -450,13 +460,18 @@ function switchGalleryPrompt(key,btn){
   const counter=document.getElementById('galleryCharCount');
   if(counter)counter.textContent=`0 / ${currentMaxChars}`;
 
-  // Reset type selection and pending state
+  // Reset type selection, restore form inputs, and hide pending state
   selectedGalleryType=null;
   document.querySelectorAll('.gallery-type-btn').forEach(b=>{
     b.classList.remove('selected');b.style.background='var(--card)';b.style.color='var(--muted)';
+    b.style.borderColor='';
   });
-  document.getElementById('galleryPending').style.display='none';
-  document.querySelectorAll('#gallerySubmitWrap .gallery-type-select,#gallerySubmitWrap .gallery-textarea-wrap,#gallerySubmitWrap .gallery-char-counter,#gallerySubmitWrap .gallery-fields-row,#gallerySubmitWrap .gallery-input,#gallerySubmitWrap .gallery-submit-row').forEach(el=>el.style.display='');
+  
+  const pending = document.getElementById('galleryPending');
+  if (pending) pending.style.display = 'none';
+  
+  const fields = document.getElementById('galleryFormFields');
+  if (fields) fields.style.display = '';
 
   renderGallery();
 }
@@ -487,16 +502,14 @@ function handleGallerySubmit(e){
   if(!selectedGalleryType){alert('Please select your result type first.');return;}
   if(text.length<10){alert('Please write at least a sentence.');return;}
   if(text.length>currentMaxChars){alert(`Please keep your entry under ${currentMaxChars} characters.`);return;}
-  // Hide fields, show pending
-  ['#gallerySubmitWrap .gallery-type-select','#gallerySubmitWrap .gallery-textarea-wrap',
-   '#gallerySubmitWrap .gallery-char-counter','#gallerySubmitWrap .gallery-fields-row',
-   '#gallerySubmitWrap .gallery-submit-row','#gallerySubmitWrap #galleryHint',
-   '#gallerySubmitWrap [style*="prompt"]'].forEach(sel=>{
-    const el=document.querySelector(sel);if(el)el.style.display='none';
-  });
-  document.getElementById('galleryPending').style.display='block';
   
-  // FIXED: Changed endpoint target from '/' to 'window.location.pathname' to keep routing context accurate
+  // Hide all inputs at once, display the success state container cleanly
+  const fields = document.getElementById('galleryFormFields');
+  if (fields) fields.style.display = 'none';
+  
+  const pending = document.getElementById('galleryPending');
+  if (pending) pending.style.display = 'block';
+  
   fetch(window.location.pathname,{
     method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
