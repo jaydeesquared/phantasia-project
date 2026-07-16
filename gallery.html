@@ -59,7 +59,7 @@
     <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
   </a>
   <div class="nav-links">
-    <a href="learn.html">Imagination Spectrum</a>
+    <a href="learn.html">App Spectrum</a>
     <a href="research.html">Research</a>
     <a href="projlab.html">Projection Lab</a>
     <a href="gallery.html">Perspectives</a>
@@ -119,7 +119,8 @@
     </div>
     <div class="gallery-grid" id="galleryGrid"></div>
 
-    <form class="gallery-submit" id="gallerySubmitWrap" name="gallery" method="POST" data-netlify="true" onsubmit="handleGallerySubmit(event)">
+    <!-- FIXED: Removed data-netlify="true" from active visible form to prevent Netlify parser conflicts -->
+    <form class="gallery-submit" id="gallerySubmitWrap" name="gallery" method="POST" onsubmit="handleGallerySubmit(event)">
       <input type="hidden" name="form-name" value="gallery">
       <h2>Add your experience</h2>
       <p>Entries are reviewed before going live - usually within 48 hours. Your email is private and only used to notify you when yours appears.</p>
@@ -129,11 +130,11 @@
       </div>
       <p style="font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Your result type</p>
       <div class="gallery-type-select" id="galleryTypeSelect">
-        <button class="gallery-type-btn" data-type="Aphantasia" data-color="#f43f5e" onclick="selectGalleryType(this)" style="border-color:rgba(244,63,94,.3)">⬛ Aphantasia</button>
-        <button class="gallery-type-btn" data-type="Low Phantasia" data-color="#F59E0B" onclick="selectGalleryType(this)" style="border-color:rgba(245,158,11,.3)">🌑 Low Phantasia</button>
-        <button class="gallery-type-btn" data-type="Phantasia" data-color="#4ade80" onclick="selectGalleryType(this)" style="border-color:rgba(74,222,128,.3)">🌗 Phantasia</button>
-        <button class="gallery-type-btn" data-type="Vivid Phantasia" data-color="#06B6D4" onclick="selectGalleryType(this)" style="border-color:rgba(6,182,212,.3)">🌕 Vivid Phantasia</button>
-        <button class="gallery-type-btn" data-type="Hyperphantasia" data-color="#10f2c8" onclick="selectGalleryType(this)" style="border-color:rgba(16,242,200,.3)">⭐ Hyperphantasia</button>
+        <button type="button" class="gallery-type-btn" data-type="Aphantasia" data-color="#f43f5e" onclick="selectGalleryType(this)" style="border-color:rgba(244,63,94,.3)">⬛ Aphantasia</button>
+        <button type="button" class="gallery-type-btn" data-type="Low Phantasia" data-color="#F59E0B" onclick="selectGalleryType(this)" style="border-color:rgba(245,158,11,.3)">🌑 Low Phantasia</button>
+        <button type="button" class="gallery-type-btn" data-type="Phantasia" data-color="#4ade80" onclick="selectGalleryType(this)" style="border-color:rgba(74,222,128,.3)">🌗 Phantasia</button>
+        <button type="button" class="gallery-type-btn" data-type="Vivid Phantasia" data-color="#06B6D4" onclick="selectGalleryType(this)" style="border-color:rgba(6,182,212,.3)">🌕 Vivid Phantasia</button>
+        <button type="button" class="gallery-type-btn" data-type="Hyperphantasia" data-color="#10f2c8" onclick="selectGalleryType(this)" style="border-color:rgba(16,242,200,.3)">⭐ Hyperphantasia</button>
       </div>
       <div class="gallery-textarea-wrap">
         <textarea class="gallery-textarea" id="galleryText" name="text" placeholder="Describe what happens when you picture the apple..." maxlength="200" oninput="updateGalleryChar()" rows="4"></textarea>
@@ -165,9 +166,10 @@
     <div class="newsletter-inner">
       <div class="section-label">Stay in the loop</div>
       <h2>New posts and videos,<br>straight to your inbox</h2>
-      <p>No noise � just new updates, video drops, and the occasional piece of research worth knowing about. Free, obviously. Unsubscribe any time.</p>
+      <p>No noise — just new updates, video drops, and the occasional piece of research worth knowing about. Free, obviously. Unsubscribe any time.</p>
       <div id="newsletterWrap">
-        <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+        <!-- FIXED: Removed data-netlify="true" from active visible form to prevent Netlify parser conflicts -->
+        <form name="newsletter" method="POST" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
           <input type="hidden" name="form-name" value="newsletter">
           <input class="newsletter-input" type="email" name="email" id="newsletterEmail" placeholder="your@email.com" autocomplete="email" required>
           <button class="newsletter-btn" type="submit">Subscribe →</button>
@@ -493,7 +495,9 @@ function handleGallerySubmit(e){
     const el=document.querySelector(sel);if(el)el.style.display='none';
   });
   document.getElementById('galleryPending').style.display='block';
-  fetch('/',{
+  
+  // FIXED: Changed endpoint target from '/' to 'window.location.pathname' to keep routing context accurate
+  fetch(window.location.pathname,{
     method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
     body:new URLSearchParams({
@@ -527,10 +531,3 @@ buildGlossary();
 </form>
 </body>
 </html>
-
-
-
-
-
-
-
