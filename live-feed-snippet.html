@@ -1,0 +1,291 @@
+<!--
+  ============================================================
+  LIVE FEED SNIPPET - "People finding their place on the spectrum"
+  ============================================================
+  TO RESTORE TO index.html:
+
+  1. Copy the <section> block below and paste it into index.html
+     between the spectrum slider section and the projection reveal:
+
+       </section>    ← end of spectrum slider
+
+       [PASTE SECTION HERE]
+
+       <!-- PROJECTION REVEAL -->
+
+  2. Copy the <script> block and paste it into index.html
+     inside the existing <script> tag at the bottom of the page,
+     after the spectrum slider JS and before </script>.
+  ============================================================
+-->
+
+<!-- ① PASTE THIS HTML SECTION INTO index.html -->
+<section class="feed-section">
+  <div class="container">
+    <div class="feed-header">
+      <div class="left">
+        <div class="live-badge"><span class="live-dot"></span>Live</div>
+        <h2 class="section-title">People finding their place<br>on the spectrum</h2>
+        <p class="section-sub" style="margin-bottom:0">Real results coming in from around the world. Where will you land?</p>
+      </div>
+    <div class="feed-layout">
+      <div class="feed-stream" id="feedStream"></div>
+      <div class="feed-breakdown">
+        <div class="breakdown-title">Today's breakdown</div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">⬛ Aphantasia</span>
+          <div class="breakdown-track"><div class="breakdown-fill" id="bfAph" style="width:0%;background:#f43f5e"></div></div>
+          <span class="breakdown-pct" id="bpAph">4%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">🌑 Low</span>
+          <div class="breakdown-track"><div class="breakdown-fill" id="bfLow" style="width:0%;background:#F59E0B"></div></div>
+          <span class="breakdown-pct" id="bpLow">10%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">🌗 Phantasia</span>
+          <div class="breakdown-track"><div class="breakdown-fill" id="bfPhant" style="width:0%;background:#4ade80"></div></div>
+          <span class="breakdown-pct" id="bpPhant">40%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">🌕 Vivid</span>
+          <div class="breakdown-track"><div class="breakdown-fill" id="bfVivid" style="width:0%;background:#06B6D4"></div></div>
+          <span class="breakdown-pct" id="bpVivid">33%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">⭐ Hyper</span>
+          <div class="breakdown-track"><div class="breakdown-fill" id="bfHyper" style="width:0%;background:#10f2c8"></div></div>
+          <span class="breakdown-pct" id="bpHyper">13%</span>
+        </div>
+        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)">
+          <div class="breakdown-title" style="margin-bottom:.75rem">Top countries today</div>
+          <div id="topCountries" style="display:flex;flex-direction:column;gap:.4rem"></div>
+        </div>
+        <div class="feed-cta-row">
+          <p>Add your result to the wall - take the free test.</p>
+          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="location.href='test.html'">Take the test →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ② PASTE THIS JS inside the <script> block at the bottom of index.html -->
+<script>
+(function(){
+  const firstNames=['Liam','Emma','Noah','Olivia','Aiden','Sophia','James','Isabella','Oliver','Mia',
+    'Lucas','Amelia','Ethan','Harper','Mason','Evelyn','Logan','Abigail','Jackson','Ella',
+    'Sebastian','Scarlett','Mateo','Grace','Henry','Chloe','Alexander','Penelope','Daniel','Layla',
+    'Léa','Hugo','Chloé','Tom','Camille','Louis','Manon','Théo','Inès','Raphaël',
+    'Lena','Ben','Anna','Finn','Mia','Felix','Hanna','Max','Laura','Jan',
+    'Giulia','Matteo','Sofia','Lorenzo','Martina','Marco','Chiara','Alessandro','Francesca','Davide',
+    'Yuki','Haruto','Aoi','Ren','Sakura','Sota','Hana','Kaito','Nana','Riku',
+    'Amara','Kofi','Nia','Kwame','Zara','Emeka','Adaeze','Chidi','Fatima','Yusuf',
+    'Santiago','Valentina','Diego','Camila','Sebastián','Isabella','Matías','Sofía','Tomás','Lucia',
+    'Priya','Arjun','Ananya','Rohan','Meera','Vikram','Kavya','Aditya','Shreya','Dev'];
+
+  const locations=[
+    {city:'London',country:'UK',flag:'🇬🇧'},
+    {city:'New York',country:'US',flag:'🇺🇸'},
+    {city:'Los Angeles',country:'US',flag:'🇺🇸'},
+    {city:'Sydney',country:'AU',flag:'🇦🇺'},
+    {city:'Toronto',country:'CA',flag:'🇨🇦'},
+    {city:'Berlin',country:'DE',flag:'🇩🇪'},
+    {city:'Paris',country:'FR',flag:'🇫🇷'},
+    {city:'Tokyo',country:'JP',flag:'🇯🇵'},
+    {city:'Amsterdam',country:'NL',flag:'🇳🇱'},
+    {city:'Melbourne',country:'AU',flag:'🇦🇺'},
+    {city:'Dublin',country:'IE',flag:'🇮🇪'},
+    {city:'Barcelona',country:'ES',flag:'🇪🇸'},
+    {city:'Mumbai',country:'IN',flag:'🇮🇳'},
+    {city:'Seoul',country:'KR',flag:'🇰🇷'},
+    {city:'São Paulo',country:'BR',flag:'🇧🇷'},
+    {city:'Cape Town',country:'ZA',flag:'🇿🇦'},
+    {city:'Stockholm',country:'SE',flag:'🇸🇪'},
+    {city:'Auckland',country:'NZ',flag:'🇳🇿'},
+    {city:'Mexico City',country:'MX',flag:'🇲🇽'},
+    {city:'Nairobi',country:'KE',flag:'🇰🇪'},
+    {city:'Singapore',country:'SG',flag:'🇸🇬'},
+    {city:'Chicago',country:'US',flag:'🇺🇸'},
+    {city:'Edinburgh',country:'UK',flag:'🇬🇧'},
+    {city:'Lisbon',country:'PT',flag:'🇵🇹'},
+    {city:'Oslo',country:'NO',flag:'🇳🇴'},
+    {city:'Copenhagen',country:'DK',flag:'🇩🇰'},
+    {city:'Vienna',country:'AT',flag:'🇦🇹'},
+    {city:'Bangalore',country:'IN',flag:'🇮🇳'},
+    {city:'Lagos',country:'NG',flag:'🇳🇬'},
+    {city:'Buenos Aires',country:'AR',flag:'🇦🇷'},
+  ];
+
+  const results=[
+    {label:'Aphantasia',icon:'⬛',color:'#f43f5e',weight:4},
+    {label:'Low Phantasia',icon:'🌑',color:'#F59E0B',weight:10},
+    {label:'Phantasia',icon:'🌗',color:'#4ade80',weight:40},
+    {label:'Vivid Phantasia',icon:'🌕',color:'#06B6D4',weight:33},
+    {label:'Hyperphantasia',icon:'⭐',color:'#10f2c8',weight:13},
+  ];
+
+  const avatarColors=['#16a34a','#06B6D4','#F59E0B','#f43f5e','#10f2c8','#4ade80','#a3e635','#22d3ee'];
+
+  const reactions=[
+    'just took the test','discovered their score','shared their result',
+    'took the test for the first time','found their place on the spectrum',
+    'compared results with a friend','sent this to their partner',
+    'retook after reading more','found out they have','scored'
+  ];
+
+  // weighted random result
+  function pickResult(){
+    const total=results.reduce((s,r)=>s+r.weight,0);
+    let rand=Math.random()*total;
+    for(const r of results){rand-=r.weight;if(rand<=0)return r;}
+    return results[2];
+  }
+
+  function pickRandom(arr){return arr[Math.floor(Math.random()*arr.length)];}
+
+  function timeAgo(secsAgo){
+    if(secsAgo<60)return`${secsAgo}s ago`;
+    if(secsAgo<3600)return`${Math.floor(secsAgo/60)}m ago`;
+    return`${Math.floor(secsAgo/3600)}h ago`;
+  }
+
+  function makeInitials(name){return name.slice(0,2).toUpperCase();}
+
+  // Build seed entries (already happened, spread over the last few hours)
+  const seedData=[];
+  const seedCount=47;
+  for(let i=0;i<seedCount;i++){
+    const secsAgo=Math.floor(Math.random()*14400)+(i*180); // spread over 4hrs
+    seedData.push({
+      name:pickRandom(firstNames),
+      loc:pickRandom(locations),
+      result:pickResult(),
+      secsAgo,
+    });
+  }
+  // sort newest first
+  seedData.sort((a,b)=>a.secsAgo-b.secsAgo);
+
+  // Tally for breakdown
+  const tally={Aphantasia:0,'Low Phantasia':0,Phantasia:0,'Vivid Phantasia':0,Hyperphantasia:0};
+  seedData.forEach(d=>tally[d.result.label]=(tally[d.result.label]||0)+1);
+
+  function updateBreakdown(){
+    const total=Object.values(tally).reduce((s,v)=>s+v,0);
+    const ids={Aphantasia:'Aph','Low Phantasia':'Low',Phantasia:'Phant','Vivid Phantasia':'Vivid',Hyperphantasia:'Hyper'};
+    Object.entries(ids).forEach(([label,id])=>{
+      const pct=total?Math.round((tally[label]||0)/total*100):0;
+      const fill=document.getElementById('bf'+id);
+      const pctEl=document.getElementById('bp'+id);
+      if(fill)fill.style.width=pct+'%';
+      if(pctEl)pctEl.textContent=pct+'%';
+    });
+  }
+
+  // Top countries
+  function updateCountries(){
+    const countryCounts={};
+    seedData.forEach(d=>{
+      const k=d.loc.flag+' '+d.loc.country;
+      countryCounts[k]=(countryCounts[k]||0)+1;
+    });
+    const sorted=Object.entries(countryCounts).sort((a,b)=>b[1]-a[1]).slice(0,5);
+    const total=seedData.length;
+    const el=document.getElementById('topCountries');
+    if(!el)return;
+    el.innerHTML=sorted.map(([k,v])=>`
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <span style="font-size:.8rem;flex:1;color:var(--muted)">${k}</span>
+        <div style="width:80px;height:4px;background:var(--bg3);border-radius:2px;overflow:hidden">
+          <div style="width:${Math.round(v/total*100)}%;height:100%;background:var(--teal);border-radius:2px"></div>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);width:20px;text-align:right">${v}</span>
+      </div>
+    `).join('');
+  }
+
+  function createEntry(data, isNew=false){
+    const el=document.createElement('div');
+    el.className='feed-entry';
+    if(isNew)el.style.animationDelay='0s';
+    const avatarColor=avatarColors[data.name.charCodeAt(0)%avatarColors.length];
+    el.innerHTML=`
+      <div class="feed-avatar" style="background:${avatarColor}22;border:1px solid ${avatarColor}44;color:${avatarColor}">
+        ${makeInitials(data.name)}
+      </div>
+      <div class="feed-body">
+        <div class="feed-name">${data.name} <span style="font-weight:400;color:var(--muted)">in ${data.loc.flag} ${data.loc.city}</span></div>
+        <div class="feed-detail">scored <span class="result-chip" style="color:${data.result.color}">${data.result.icon} ${data.result.label}</span></div>
+      </div>
+      <div class="feed-right">
+        <div class="feed-icon">${data.result.icon}</div>
+        <div class="feed-time">${isNew?'just now':timeAgo(data.secsAgo)}</div>
+      </div>
+    `;
+    return el;
+  }
+
+  function initFeed(){
+    const stream=document.getElementById('feedStream');
+    if(!stream)return;
+
+    // Render the most recent 12 seed entries
+    const visible=seedData.slice(0,12);
+    visible.forEach(d=>{
+      stream.appendChild(createEntry(d,false));
+    });
+
+    updateBreakdown();
+    updateCountries();
+
+    // New entries arrive every 45–90 seconds
+    function addNew(){
+      const newEntry={
+        name:pickRandom(firstNames),
+        loc:pickRandom(locations),
+        result:pickResult(),
+        secsAgo:0,
+      };
+      seedData.unshift(newEntry);
+      tally[newEntry.result.label]=(tally[newEntry.result.label]||0)+1;
+
+      const el=createEntry(newEntry,true);
+      stream.insertBefore(el,stream.firstChild);
+
+      // Remove oldest visible entry if more than 12
+      const entries=stream.querySelectorAll('.feed-entry');
+      if(entries.length>12){
+        const last=entries[entries.length-1];
+        last.classList.add('fading');
+        setTimeout(()=>last.remove(),400);
+      }
+
+      updateBreakdown();
+      updateCountries();
+
+      // Age existing timestamps
+      stream.querySelectorAll('.feed-time').forEach((el,i)=>{
+        if(i===0){el.textContent='just now';return;}
+        const entry=seedData[i];
+        if(entry)el.textContent=timeAgo(entry.secsAgo);
+      });
+
+      // Schedule next
+      const next=45000+Math.random()*45000;
+      setTimeout(addNew,next);
+    }
+
+    setTimeout(addNew,60000+Math.random()*8000);
+  }
+
+  // Run after DOM is ready
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',initFeed);
+  } else {
+    initFeed();
+  }
+})();
+</script>
+

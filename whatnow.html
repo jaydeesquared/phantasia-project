@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <title>What Now? Practical Guides After Your Imagery Test Result | The Phantasia Project</title>
+  <meta name="description" content="Just found out you have aphantasia or hyperphantasia? Practical guides covering creativity, memory, sleep, relationships, and work - for every result on the spectrum.">
+  <meta name="keywords" content="aphantasia what to do, living with aphantasia, hyperphantasia practical guide, aphantasia relationships, aphantasia creativity, aphantasia memory">
+  <link rel="canonical" href="https://thephantasiaproject.com/whatnow">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#080812">
+  <meta name="author" content="JD - The Phantasia Project">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thephantasiaproject.com/whatnow">
+  <meta property="og:title" content="What Now? Practical Guides After Your Imagery Test Result | The Phantasia Project">
+  <meta property="og:description" content="Just found out you have aphantasia or hyperphantasia? Practical guides covering creativity, memory, sleep, relationships, and work - for every result on the spectrum.">
+  <meta property="og:site_name" content="The Phantasia Project">
+  <meta property="og:image" content="https://thephantasiaproject.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@phantasiaproject">
+  <meta name="twitter:title" content="What Now? Practical Guides After Your Imagery Test Result | The Phantasia Project">
+  <meta name="twitter:description" content="Just found out you have aphantasia or hyperphantasia? Practical guides covering creativity, memory, sleep, relationships, and work - for every result on the spectrum.">
+  <meta name="twitter:image" content="https://thephantasiaproject.com/og-image.png">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Now? Practical Guides for Every Result on the Imagination Spectrum",
+  "description": "Practical guides for aphantasia, hyperphantasia, and typical imagery - covering creativity, memory, sleep, relationships, and more.",
+  "author": {
+    "@type": "Person",
+    "name": "JD"
+  },
+  "url": "https://thephantasiaproject.com/whatnow",
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Phantasia Project",
+    "url": "https://thephantasiaproject.com"
+  }
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="noise-overlay"></div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html" style="text-decoration:none;color:inherit">
+    <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+  </a>
+  <div class="nav-links">
+    <a href="learn.html">Imagination Spectrum</a>
+    <a href="research.html">Research</a>
+    <a href="projlab.html">Projection Lab</a>
+    <a href="gallery.html">Perspectives</a>
+    <a href="videos.html">Videos</a>
+    <button class="nav-cta" onclick="location.href='test.html'">Take the Test →</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="learn.html" onclick="toggleMobile()">Imagination Spectrum</a>
+  <a href="research.html" onclick="toggleMobile()">Research</a>
+  <a href="projlab.html" onclick="toggleMobile()">Projection Lab</a>
+  <a href="gallery.html" onclick="toggleMobile()">Perspectives</a>
+  <a href="videos.html" onclick="toggleMobile()">Videos</a>
+  <a href="test.html" onclick="toggleMobile()" style="color:var(--violet-light)">Take the Test →</a>
+</div>
+
+<div id="whatnow">
+  <div class="wn-hero">
+    <div class="orb" style="width:500px;height:500px;top:-150px;left:-100px;background:rgba(6,182,212,.12)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div class="section-label">After the test</div>
+      <h1>So - what now?</h1>
+      <p>You've taken the test. You know where you land. But what does it actually mean for your life - your creativity, your memory, your relationships, your sleep? Start here.</p>
+    </div>
+  </div>
+  <div class="container" style="padding-bottom:5rem">
+    <div class="wn-tabs" id="wnTabs">
+      <button class="wn-tab active" onclick="switchWnTab('aph',this)">⬛ I have Aphantasia</button>
+      <button class="wn-tab" onclick="switchWnTab('hyper',this)">⭐ I have Hyperphantasia</button>
+      <button class="wn-tab" onclick="switchWnTab('mid',this)">🌗 I'm somewhere in the middle</button>
+    </div>
+
+    <!-- APHANTASIA PANEL -->
+    <div class="wn-panel active" id="wn-aph">
+      <div class="wn-intro" style="background:linear-gradient(135deg,rgba(22,163,74,.08),rgba(6,182,212,.06));border-color:rgba(22,163,74,.25)">
+        <div class="wn-intro-head">
+          <div class="wn-intro-icon">⬛</div>
+          <div><h2>You have aphantasia</h2><div class="tag tag-rose" style="margin-top:.35rem">~4% of people</div></div>
+        </div>
+        <p>Your mind works conceptually rather than visually. When you close your eyes and try to picture something, you get knowledge - not pictures. This is not a deficit, a disorder, or something that needs fixing. It is a natural and well-documented variation in human cognition - one that comes with a genuinely distinct set of cognitive strengths. What follows is a practical guide to what this means across different areas of your life.</p>
+      </div>
+
+      <div class="wn-callout" style="background:rgba(22,163,74,.08);border-color:rgba(22,163,74,.3);margin-bottom:1.5rem">
+        <div class="wn-callout-icon">✦</div>
+        <div>
+          <h4 style="color:var(--violet-light)">Worth saying clearly</h4>
+          <p style="color:var(--muted)">Many people discover aphantasia as adults and spend time grieving a "loss." But you haven't lost anything - you never had it, so you've been succeeding at everything in your life without it. And research increasingly suggests that the conceptual, verbal, and analytical strengths that often accompany aphantasia are genuine advantages in a wide range of fields. This is a different cognitive style, not a lesser one.</p>
+        </div>
+      </div>
+
+      <div class="wn-callout" style="background:rgba(6,182,212,.06);border-color:rgba(6,182,212,.3);margin-bottom:2rem">
+        <div class="wn-callout-icon">🔬</div>
+        <div>
+          <h4 style="color:var(--teal)">What the research actually shows</h4>
+          <p style="color:var(--muted)">Studies by Wicken et al. (2021) and Zeman's group found aphantasics have significantly lower rates of phobias and PTSD-related symptoms - because those conditions are largely maintained by vivid involuntary mental imagery that replays traumatic or feared content. Without that visual replay mechanism, the brain simply doesn't sustain fear responses in the same way. Separately, research shows aphantasics perform comparably to or better than average on abstract reasoning, verbal tasks, and systems thinking - the absence of imagery doesn't reduce cognitive performance, it redirects it.</p>
+        </div>
+      </div>
+
+      <div class="wn-grid">
+        <div class="wn-card">
+          <div class="wn-card-icon">🛡️</div>
+          <h3>Mental resilience</h3>
+          <ul>
+            <li>Significantly lower rates of phobia - most phobias are sustained by vivid mental imagery of feared outcomes, which doesn't apply to you in the same way</li>
+            <li>Less susceptible to PTSD-style visual flashbacks - traumatic imagery doesn't replay involuntarily with the same intensity</li>
+            <li>Advertising, propaganda, and fear-based messaging that works through mental imagery have a reduced effect on you</li>
+            <li>You're less likely to lie awake at night with intrusive or distressing visual thoughts</li>
+            <li>Emotional memory is intact - you feel things fully - but you're not ambushed by unwanted visual replays</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">🧠</div>
+          <h3>Cognitive strengths</h3>
+          <ul>
+            <li>Verbal and conceptual thinking are often highly developed - your brain routes through language and abstraction rather than imagery</li>
+            <li>Strong semantic memory: excellent retention of facts, concepts, and knowledge even when visual episodic detail is thinner</li>
+            <li>Abstract and systems thinking is frequently a genuine strength - logic, analysis, programming, mathematics</li>
+            <li>Research shows no reduction in general cognitive performance - aphantasia redirects cognitive style, it doesn't diminish it</li>
+            <li>Potentially more resistant to false memories, which are often created through vivid visual imagination of events that didn't happen</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">🎨</div>
+          <h3>Creative life</h3>
+          <ul>
+            <li>You can absolutely be creative - Blake Ross (Firefox), Ed Catmull (Pixar), Glen Keane (Disney) and Craig Venter (genomics) all have aphantasia</li>
+            <li>Your creativity works through concepts, patterns, and language - often producing more original work, less constrained by pre-visualised outcomes</li>
+            <li>Writers with aphantasia often excel at plot structure, dialogue, and character psychology rather than sensory description</li>
+            <li>Visual artists with aphantasia work entirely from observation - trained, precise, and uncontaminated by idealised mental images</li>
+            <li>Sketching, mood boards, and reference images become powerful tools precisely because you use them actively rather than defaulting to internal imagery</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">📚</div>
+          <h3>Reading &amp; fiction</h3>
+          <ul>
+            <li>You experience fiction analytically - you understand the story, you don't passively watch it, which often produces sharper critical engagement</li>
+            <li>Aphantasic readers frequently have stronger recall of plot, character motivation, and thematic structure than visual readers</li>
+            <li>You're less distracted by lavish description and more drawn to what actually matters: character and consequence</li>
+            <li>Audio books work especially well - the narration activates a different channel and many aphantasics find them immersive in a distinct way</li>
+            <li>Horror and disturbing fiction has less lasting impact - you process it intellectually without the involuntary visual replay afterwards</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">😴</div>
+          <h3>Sleep &amp; rest</h3>
+          <ul>
+            <li>Many aphantasics fall asleep faster - no involuntary image reel running as you try to wind down</li>
+            <li>Intrusive visual thoughts at bedtime - a common source of insomnia - simply don't apply in the same way</li>
+            <li>Many aphantasics report some visual content in dreams - the visual system can activate during REM even when voluntary imagery is absent</li>
+            <li>Others report non-visual dreams: narrative, feeling, and abstract knowing without images - a distinct but entirely valid experience</li>
+            <li>Guided meditation that relies on visualisation may feel frustrating - seek body-scan, breathwork, or sound-based practices instead, which work just as well</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">❤️</div>
+          <h3>Relationships</h3>
+          <ul>
+            <li>You're not less emotionally invested in people or experiences - emotional memory is fully intact, just without the visual component</li>
+            <li>You tend to remember how things felt and what was said more reliably than what things looked like - which is often what matters most</li>
+            <li>If your partner has phantasia or hyperphantasia, they may describe memories differently - sharing this site is a useful starting point</li>
+            <li>Some aphantasics find face recognition harder - being aware of this helps you compensate with name association and context cues</li>
+            <li>Your presence in conversations tends to be more focused on what people are actually saying, not distracted by mental imagery</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">💼</div>
+          <h3>Work &amp; learning</h3>
+          <ul>
+            <li>Abstract and conceptual thinking is often a real, measurable strength - systems design, analysis, writing, programming, law, philosophy</li>
+            <li>You likely excel at tasks requiring objective focus on what's real and present rather than speculative visualisation</li>
+            <li>Written instructions, frameworks, and structured notes suit your cognitive style - lean into them rather than forcing visual methods</li>
+            <li>Spatial tasks (reading maps, mental rotation) can be harder - external tools, diagrams, and reference images more than compensate</li>
+            <li>Fields where aphantasia is arguably an advantage: data analysis, editing, critical writing, software engineering, scientific research</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">🧘</div>
+          <h3>Mindfulness &amp; focus</h3>
+          <ul>
+            <li>Body-scan meditation, breathwork, mantra, and sound-based practices work entirely without mental imagery - and are often deeply effective for aphantasics</li>
+            <li>Many aphantasics find present-moment mindfulness easier - your attention naturally anchors to sensation and thought rather than visual imagination</li>
+            <li>Mind-wandering for aphantasics tends to be verbal and conceptual rather than visual - which can feel quieter and less overwhelming</li>
+            <li>The absence of intrusive imagery means fewer disruptions during focused work - flow states may come more readily</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wn-next">
+        <h3>Your next steps</h3>
+        <div class="wn-next-steps">
+          <div class="wn-step" onclick="location.href='learn.html'"><div class="wn-step-num">1</div>Read the full aphantasia explainer - including what's happening in the brain and the notable names who have it</div>
+          <div class="wn-step" onclick="location.href='research.html'"><div class="wn-step-num">2</div>Explore the research timeline - from Galton 1880 to the latest fMRI and phobia studies</div>
+          <div class="wn-step" onclick="location.href='learn.html'"><div class="wn-step-num">3</div>Look up SDAM, episodic memory, and semantic memory in the A–Z glossary</div>
+          <div class="wn-step" onclick="location.href='learn.html'"><div class="wn-step-num">4</div>Read the hyperphantasia explainer - including the perspective on discovering a partner has aphantasia</div>
+          <div class="wn-step" onclick="location.href='gallery.html'"><div class="wn-step-num">5</div>Read the Perspectives wall - how other aphantasics describe the same experiences you're processing now</div>
+          <div class="wn-step" onclick="location.href='test.html'"><div class="wn-step-num">6</div>Send the test to someone you know - the results conversation is almost always fascinating</div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(22,163,74,.08),rgba(6,182,212,.06));border:1px solid rgba(22,163,74,.2);border-radius:16px;padding:1.75rem;margin-top:1.25rem;text-align:center">
+        <p style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">Know someone who should take this?</p>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem">The gap between two people's results is almost always more surprising than either expects. Send them the test - it's free and takes five minutes.</p>
+        <button class="btn btn-primary" onclick="shareTest(this)">Copy the test link →</button>
+      </div>
+    </div>
+
+    <!-- HYPERPHANTASIA PANEL -->
+
+    <div class="wn-panel" id="wn-hyper">
+      <div class="wn-intro" style="background:linear-gradient(135deg,rgba(16,242,200,.06),rgba(6,182,212,.05));border-color:rgba(16,242,200,.2)">
+        <div class="wn-intro-head">
+          <div class="wn-intro-icon">⭐</div>
+          <div><h2>You have hyperphantasia</h2><div class="tag tag-teal" style="margin-top:.35rem">~3–5% of people</div></div>
+        </div>
+        <p>Your imagination runs in high definition, voluntarily and sometimes involuntarily. You've probably assumed this is how everyone thinks. It isn't - most people's mental imagery is substantially dimmer and less stable than yours. This creates real gifts and real challenges. What follows is a practical guide to both.</p>
+      </div>
+
+      <div class="wn-callout" style="background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.25);margin-bottom:1.5rem">
+        <div class="wn-callout-icon">💡</div>
+        <div>
+          <h4 style="color:var(--amber)">The most important thing first</h4>
+          <p style="color:var(--muted)">Hyperphantasia is talked about almost exclusively as a positive. It often is - but the involuntary, always-on nature of vivid imagery has genuine costs that rarely get acknowledged. Your experience of intrusive thoughts, emotional memories, and "not switching off" is real and has a neurological basis. You're not oversensitive. Your imagery system is simply running at a higher intensity than most.</p>
+        </div>
+      </div>
+
+      <div class="wn-grid">
+        <div class="wn-card">
+          <div class="wn-card-icon">🎨</div>
+          <h3>Creative life</h3>
+          <ul>
+            <li>You likely have a strong advantage in visual creative work - design, illustration, film, architecture, fashion</li>
+            <li>Your imagination generates material spontaneously - ideas arrive pre-visualised rather than needing to be constructed</li>
+            <li>Writing fiction may feel like transcription - you watch the scene and describe what you see</li>
+            <li>The challenge is often editing rather than generating - you may over-describe or struggle to cut visual detail</li>
+            <li>Music is likely a rich, multi-sensory experience - possibly producing visual or spatial responses</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">📚</div>
+          <h3>Reading fiction</h3>
+          <ul>
+            <li>You experience fiction cinematically - you watch it happen in high definition</li>
+            <li>This makes immersive, descriptive fiction deeply absorbing - but also means disturbing content lingers</li>
+            <li>Horror, trauma narratives, and graphic content will stay with you as visual memories, not just plot points</li>
+            <li>It's worth being deliberate about what you read before bed - the imagery follows you into sleep</li>
+            <li>You may find re-reads surprising - your mental film of the book can be stronger than the text itself</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">🧠</div>
+          <h3>Memory</h3>
+          <ul>
+            <li>Your episodic memories are likely vivid and spatially detailed - you remember what things looked like</li>
+            <li>This means positive memories feel genuinely warm and retrievable - but painful ones can be re-experienced with intensity</li>
+            <li>You may occasionally confuse vivid imagination or dreams with real memories - this is a known hyperphantasia trait</li>
+            <li>Traumatic memories may intrude visually and with more distress than for others - professional support is valuable here</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">😴</div>
+          <h3>Sleep &amp; switching off</h3>
+          <ul>
+            <li>Falling asleep may be difficult - your mind continues generating imagery without invitation</li>
+            <li>Dark rooms, boring pre-sleep routines, and audio focus (podcasts, ambient sound) can help give your attention somewhere to anchor</li>
+            <li>Dreams are likely vivid and cinematic - you may find it harder than most to shake an upsetting dream</li>
+            <li>Intrusive imagery at night is common and not a sign of a mental health problem - though if it's distressing, speaking to a therapist is worthwhile</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">❤️</div>
+          <h3>Relationships</h3>
+          <ul>
+            <li>Your partner almost certainly has less vivid imagery than you - even if they don't have aphantasia</li>
+            <li>You may replay past arguments or happy memories in more detail than they do - this asymmetry can cause friction</li>
+            <li>Your emotional responses to imagined scenarios (planned conversations, hypothetical situations) may seem disproportionate to others</li>
+            <li>Explaining hyperphantasia to a partner often unlocks a lot - what seemed like oversensitivity makes more sense with context</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">💼</div>
+          <h3>Work &amp; focus</h3>
+          <ul>
+            <li>You may find open-plan offices or visually busy environments more distracting than colleagues do</li>
+            <li>Mental simulation is a genuine strength - you can prototype, rehearse, and problem-solve visually before acting</li>
+            <li>Anxious pre-visualisation of failure scenarios is a real risk - your brain will render them in detail whether you want it to or not</li>
+            <li>Work that channels the imagery productively (design, storytelling, strategy, spatial planning) tends to be highly satisfying</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wn-callout" style="background:rgba(244,63,94,.06);border-color:rgba(244,63,94,.25)">
+        <div class="wn-callout-icon">⚡</div>
+        <div>
+          <h4 style="color:var(--rose)">On intrusive imagery and mental health</h4>
+          <p style="color:var(--muted)">Hyperphantasia is associated with more intense experiences of intrusive imagery, which overlaps with symptoms of OCD, PTSD, and anxiety disorders. If unwanted images are causing significant distress - especially traumatic ones - it's worth speaking to a therapist familiar with imagery-based techniques like EMDR or imagery rescripting, which are specifically designed for vivid, intrusive mental imagery.</p>
+        </div>
+      </div>
+
+      <div class="wn-next">
+        <h3>Your next steps</h3>
+        <div class="wn-next-steps">
+          <div class="wn-step" onclick="location.href='learn.html'"><div class="wn-step-num">1</div>Read the hyperphantasia deep-dive - including the double-edged nature of vivid imagery</div>
+          <div class="wn-step" onclick="location.href='research.html'"><div class="wn-step-num">2</div>Explore first-person perspective and lived experience in the research context</div>
+          <div class="wn-step" onclick="location.href='research.html'"><div class="wn-step-num">3</div>Explore the neural research - including fMRI findings on visual cortex connectivity in hyperphantasia</div>
+          <div class="wn-step" onclick="location.href='learn.html'"><div class="wn-step-num">4</div>Look up intrusive imagery, synesthesia, and voluntary imagery in the A–Z</div>
+          <div class="wn-step" onclick="location.href='test.html'"><div class="wn-step-num">5</div>Send the test to your partner or close friends - the gap is often bigger than anyone expects</div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(22,163,74,.08),rgba(6,182,212,.06));border:1px solid rgba(22,163,74,.2);border-radius:16px;padding:1.75rem;margin-top:1.25rem;text-align:center">
+        <p style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">Know someone who should take this?</p>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem">The gap between two people's results is almost always more surprising than either expects. Send them the test - it's free and takes five minutes.</p>
+        <button class="btn btn-primary" onclick="shareTest(this)">Copy the test link →</button>
+      </div>
+    </div>
+
+    <!-- MIDDLE PANEL -->
+    <div class="wn-panel" id="wn-mid">
+      <div class="wn-intro" style="background:linear-gradient(135deg,rgba(22,163,74,.08),rgba(6,182,212,.05));border-color:rgba(22,163,74,.25)">
+        <div class="wn-intro-head">
+          <div class="wn-intro-icon">🌗</div>
+          <div><h2>You're in the middle</h2><div class="tag tag-violet" style="margin-top:.35rem">~70% of people</div></div>
+        </div>
+        <p>Most people sit somewhere between the extremes - and this is where the spectrum is most nuanced. "Typical" imagery covers an enormous range of experiences, from dim and flickering to fairly clear and stable. Here's how to make sense of where you are within that range, and what it means.</p>
+      </div>
+
+      <div class="wn-callout" style="background:rgba(22,163,74,.07);border-color:rgba(22,163,74,.25);margin-bottom:1.5rem">
+        <div class="wn-callout-icon">💡</div>
+        <div>
+          <h4 style="color:var(--violet-light)">The middle is more interesting than it sounds</h4>
+          <p style="color:var(--muted)">Being "typical" doesn't mean boring - it means you're in the range where introspection is genuinely difficult. Two people who both score in the middle range will often describe their imagery very differently: one as a dim sketch, another as a fairly clear picture. The middle is where self-knowledge matters most, because nothing is obvious.</p>
+        </div>
+      </div>
+
+      <div class="wn-grid">
+        <div class="wn-card">
+          <div class="wn-card-icon">🔍</div>
+          <h3>Understanding your score</h3>
+          <ul>
+            <li>Lower-middle scores (35–48): imagery is present but faint, unstable, or hard to sustain - closer to the aphantasic end of typical</li>
+            <li>Higher-middle scores (49–62): imagery is reasonably clear and useful - you can visualise but it's not cinematic</li>
+            <li>Your score may vary by type of imagery - you might see faces poorly but landscapes clearly, or vice versa</li>
+            <li>Introspection about imagery is genuinely unreliable - many people underestimate or overestimate their own vividness</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">🎭</div>
+          <h3>Multi-sensory variation</h3>
+          <ul>
+            <li>Being mid-range visually doesn't mean the same for other senses - check your auditory, olfactory, and tactile imagery too</li>
+            <li>Many people with mid-range visual imagery have very vivid auditory imagination (hearing music in their head clearly)</li>
+            <li>The VVIQ only measures visual imagery - your overall imagination profile may be more complex</li>
+            <li>Consider taking the test again with specific scenes that are emotionally significant - vividness can vary with emotional weight</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">📖</div>
+          <h3>Practical implications</h3>
+          <ul>
+            <li>You likely experience fiction as somewhere between purely analytical and fully cinematic</li>
+            <li>Guided meditation probably works for you - though the images may be impressionistic rather than detailed</li>
+            <li>Memory replay is likely partial - some visual texture, some conceptual knowing</li>
+            <li>You may find your imagery is better for familiar places and faces than unfamiliar ones</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <div class="wn-card-icon">🌐</div>
+          <h3>The bigger picture</h3>
+          <ul>
+            <li>People in the middle are often the most surprised by the extremes - the idea of no imagery or photorealistic imagery can both feel alien</li>
+            <li>This gives you an interesting vantage point for understanding the full range - you're not at either end but you can see both</li>
+            <li>Your imagery may fluctuate more than people at the extremes - stress, tiredness, and emotional state all affect vividness</li>
+            <li>If you scored low-middle and suspect you might be on the aphantasic spectrum, the research page is worth reading in full</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wn-next">
+        <h3>Your next steps</h3>
+        <div class="wn-next-steps">
+          <div class="wn-step" onclick="location.href='learn.html'"><div class="wn-step-num">1</div>Read the full spectrum explainer - particularly the population distribution section</div>
+          <div class="wn-step" onclick="location.href='learn.html'"><div class="wn-step-num">2</div>Look up VVIQ, episodic memory, and multi-sensory imagery in the A–Z</div>
+          <div class="wn-step" onclick="location.href='research.html'"><div class="wn-step-num">3</div>Read about the VVIQ methodology - understanding how the test works helps interpret your score</div>
+          <div class="wn-step" onclick="location.href='learn.html'"><div class="wn-step-num">4</div>Read the spectrum guide - written specifically for people in the middle</div>
+          <div class="wn-step" onclick="location.href='test.html'"><div class="wn-step-num">5</div>Send the test to people you know - the variation even within "typical" is often striking</div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(22,163,74,.08),rgba(6,182,212,.06));border:1px solid rgba(22,163,74,.2);border-radius:16px;padding:1.75rem;margin-top:1.25rem;text-align:center">
+        <p style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">Know someone who should take this?</p>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem">The gap between two people's results is almost always more surprising than either expects. Send them the test - it's free and takes five minutes.</p>
+        <button class="btn btn-primary" onclick="shareTest(this)">Copy the test link →</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ============================== NEWSLETTER (persistent) ============================== -->
+<section class="newsletter-section">
+  <div class="orb"></div>
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="section-label">Stay in the loop</div>
+      <h2>New posts and videos,<br>straight to your inbox</h2>
+      <p>No noise � just new updates, video drops, and the occasional piece of research worth knowing about. Free, obviously. Unsubscribe any time.</p>
+      <div id="newsletterWrap">
+        <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="hidden" name="form-name" value="newsletter">
+          <input class="newsletter-input" type="email" name="email" id="newsletterEmail" placeholder="your@email.com" autocomplete="email" required>
+          <button class="newsletter-btn" type="submit">Subscribe →</button>
+        </form>
+        <p class="newsletter-privacy">🔒 No spam. No selling your data. Just the good stuff.</p>
+      </div>
+      <div class="newsletter-success" id="newsletterSuccess">
+        <h3>👁 You're in.</h3>
+        <p>Thanks for subscribing. You'll hear from us when there's something worth reading - which is not every day, we promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (persistent) ============================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html" style="text-decoration:none;color:inherit">
+          <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+        </a>
+        <p>A free, open information hub for the full imagination spectrum - from aphantasia to hyperphantasia.</p>
+        <div class="footer-social">
+          <!-- TikTok -->
+          <a class="social-link" href="https://tiktok.com/@mindseye" target="_blank" rel="noopener" title="TikTok">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.16 8.16 0 004.78 1.53V6.82a4.85 4.85 0 01-1.01-.13z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a class="social-link" href="https://instagram.com/mindseye" target="_blank" rel="noopener" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a class="social-link" href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener" title="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="learn.html">Imagination Spectrum</a></li>
+          <li><a href="projlab.html">Projection Lab</a></li>
+          <li><a href="gallery.html">Perspectives</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="learn.html">A–Z Glossary</a></li>
+          <li><a href="whatnow.html">What Now?</a></li>
+          <li><a href="test.html">Take the Test</a></li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div class="footer-col">
+        <h4>Content</h4>
+        <ul class="footer-links">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="https://tiktok.com/@mindseye" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://instagram.com/mindseye" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p>Questions, research suggestions, or your own story to share? Get in touch.</p>
+        <a class="footer-email" href="mailto:hello@mindseye.info">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          hello@mindseye.info
+        </a>
+        <p style="margin-top:1rem">Or find us on socials - we read every message.</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 The Phantasia Project. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="learn.html">A–Z</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="shared.js"></script>
+<script>
+function switchWnTab(id,btn){
+  document.querySelectorAll('.wn-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.wn-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('wn-'+id).classList.add('active');
+}
+
+// Read ?tab= from URL and activate the right panel
+document.addEventListener('DOMContentLoaded', function() {
+  const params = new URLSearchParams(window.location.search);
+  const tab = params.get('tab');
+  if (tab) {
+    const tabMap = {aph: 0, hyper: 1, mid: 2};
+    const idx = (tabMap[tab] !== undefined) ? tabMap[tab] : 2;
+    const tabs = document.querySelectorAll('.wn-tab');
+    const ids = ['aph', 'hyper', 'mid'];
+    if (tabs[idx]) switchWnTab(ids[idx], tabs[idx]);
+  }
+});
+</script>
+
+<!-- Netlify Forms - static declarations for deploy-time detection -->
+<form name="newsletter" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="newsletter">
+  <input name="email">
+</form>
+<form name="gallery" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="gallery">
+  <input name="type"><input name="text"><input name="name">
+  <input name="country"><input name="email"><input name="prompt">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <title>Free VVIQ Imagery Test - Find Your Place on the Spectrum | The Phantasia Project</title>
+  <meta name="description" content="Take the free VVIQ-based test to discover your mental imagery vividness - from aphantasia to hyperphantasia. 22 questions, full results, no email required. Used in hundreds of peer-reviewed studies.">
+  <meta name="keywords" content="free VVIQ test, aphantasia test, mental imagery test, hyperphantasia test, imagination spectrum quiz, imagery vividness questionnaire">
+  <link rel="canonical" href="https://thephantasiaproject.com/test">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#080812">
+  <meta name="author" content="JD - The Phantasia Project">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thephantasiaproject.com/test">
+  <meta property="og:title" content="Free VVIQ Imagery Test - Find Your Place on the Spectrum | The Phantasia Project">
+  <meta property="og:description" content="Take the free VVIQ-based test to discover your mental imagery vividness - from aphantasia to hyperphantasia. 22 questions, full results, no email required. Used in hundreds of peer-reviewed studies.">
+  <meta property="og:site_name" content="The Phantasia Project">
+  <meta property="og:image" content="https://thephantasiaproject.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@phantasiaproject">
+  <meta name="twitter:title" content="Free VVIQ Imagery Test - Find Your Place on the Spectrum | The Phantasia Project">
+  <meta name="twitter:description" content="Take the free VVIQ-based test to discover your mental imagery vividness - from aphantasia to hyperphantasia. 22 questions, full results, no email required. Used in hundreds of peer-reviewed studies.">
+  <meta name="twitter:image" content="https://thephantasiaproject.com/og-image.png">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "The Phantasia Project Imagery Test",
+  "description": "A free VVIQ-based test to determine your mental imagery vividness - aphantasia, hyperphantasia, or somewhere in between.",
+  "applicationCategory": "HealthApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "url": "https://thephantasiaproject.com/test",
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Phantasia Project",
+    "url": "https://thephantasiaproject.com"
+  }
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="noise-overlay"></div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html" style="text-decoration:none;color:inherit">
+    <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+  </a>
+  <div class="nav-links">
+    <a href="learn.html">Imagination Spectrum</a>
+    <a href="research.html">Research</a>
+    <a href="projlab.html">Projection Lab</a>
+    <a href="gallery.html">Perspectives</a>
+    <a href="videos.html">Videos</a>
+    <button class="nav-cta" onclick="location.href='test.html'">Take the Test →</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="learn.html" onclick="toggleMobile()">Imagination Spectrum</a>
+  <a href="research.html" onclick="toggleMobile()">Research</a>
+  <a href="projlab.html" onclick="toggleMobile()">Projection Lab</a>
+  <a href="gallery.html" onclick="toggleMobile()">Perspectives</a>
+  <a href="videos.html" onclick="toggleMobile()">Videos</a>
+  <a href="test.html" onclick="toggleMobile()" style="color:var(--violet-light)">Take the Test →</a>
+</div>
+
+<div id="test">
+  <div id="testIntro">
+    <section class="test-hero">
+      <div class="orb" style="width:600px;height:600px;top:-200px;left:50%;transform:translateX(-50%);background:rgba(22,163,74,.15)"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div class="section-label" style="display:inline-block">Free - No Signup Required</div>
+        <h1 style="margin-top:.5rem">The Imagination Spectrum Test</h1>
+        <p>Based on the VVIQ - the gold-standard imagery assessment used in hundreds of peer-reviewed studies - extended with a multi-sensory profile and involuntary imagery screen. 22 questions. About 8 minutes. Free, always.</p>
+        <button class="btn btn-primary" style="margin-top:1rem" onclick="startTest()">Start the test →</button>
+      </div>
+    </section>
+    <div class="container" style="padding-bottom:3rem">
+      <div class="grid-3" style="margin-top:1rem">
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">✦</div>
+          <h3 style="font-size:1rem;margin-bottom:.5rem">22 Questions</h3>
+          <p style="font-size:.85rem;color:var(--muted)">16 VVIQ questions plus a 6-question multi-sensory and involuntary imagery extension.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">🔓</div>
+          <h3 style="font-size:1rem;margin-bottom:.5rem">100% Free</h3>
+          <p style="font-size:.85rem;color:var(--muted)">Full detailed results. No email. No paywall. No paid "premium report." Ever.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">📊</div>
+          <h3 style="font-size:1rem;margin-bottom:.5rem">Real Science</h3>
+          <p style="font-size:.85rem;color:var(--muted)">The VVIQ has been used in hundreds of peer-reviewed studies since 1973.</p>
+        </div>
+      </div>
+      <div style="background:rgba(22,163,74,.07);border:1px solid rgba(22,163,74,.25);border-radius:14px;padding:1.25rem 1.5rem;margin-top:1.25rem">
+        <p style="font-size:.875rem;font-weight:700;color:var(--violet-light);margin-bottom:.5rem">How this test is structured</p>
+        <p style="font-size:.825rem;color:var(--muted);line-height:1.65;margin-bottom:.6rem">The first 16 questions are the <strong style="color:var(--text)">VVIQ</strong> - a validated scientific scale used in hundreds of peer-reviewed studies. Yes, they feel repetitive. That's intentional: rating the same type of imagery across multiple scenarios gives a more reliable score than a single vivid question would. Bear with it.</p>
+        <p style="font-size:.825rem;color:var(--muted);line-height:1.65">Questions 17–22 are different. They cover <strong style="color:var(--text)">auditory imagery</strong> (can you hear music in your head?), <strong style="color:var(--text)">other senses</strong> (smell, touch), <strong style="color:var(--text)">emotional imagery</strong>, and <strong style="color:var(--text)">involuntary imagery</strong> - whether your mind generates content without being asked. These produce a multi-sensory profile that no standard test measures. They're also more interesting.</p>
+     
+      </div>
+      
+        <div>
+          <br><br>
+          <span style="font-size:1.4rem;flex-shrink:0">🔭</span>
+          <br>
+          <p style="font-size:.875rem;font-weight:700;color:var(--teal);margin-bottom:.25rem">Do you look for images in front of you, not inside your head?</p>
+          <p style="font-size:.825rem;color:var(--muted);line-height:1.6">If you naturally expect mental images to appear overlaid on the world in front of you - rather than in an internal "mind space" - you may be a <strong style="color:var(--teal)">projector</strong>. The VVIQ was designed for internal imagers, so your score here may underestimate your actual imagery ability. <span style="cursor:pointer;color:var(--teal);font-weight:600" onclick="location.href='projlab.html'">Read about prophantasia first →</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="testQuiz" style="display:none;padding-top:80px">
+    <div class="quiz-wrap">
+      <div class="quiz-progress"><div class="quiz-progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="quiz-card" id="quizCard"></div>
+    </div>
+  </div>
+  <div id="testResult" style="display:none;padding:80px 0">
+    <div class="container" style="max-width:700px">
+      <div class="result-card" id="resultCard"></div>
+      <div style="text-align:center;margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="location.href='learn.html'">Learn more about your type →</button>
+        <button class="btn btn-outline" onclick="resetTest()">Retake the test</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ============================== NEWSLETTER (persistent) ============================== -->
+<section class="newsletter-section">
+  <div class="orb"></div>
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="section-label">Stay in the loop</div>
+      <h2>New posts and videos,<br>straight to your inbox</h2>
+      <p>No noise � just new updates, video drops, and the occasional piece of research worth knowing about. Free, obviously. Unsubscribe any time.</p>
+      <div id="newsletterWrap">
+        <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="hidden" name="form-name" value="newsletter">
+          <input class="newsletter-input" type="email" name="email" id="newsletterEmail" placeholder="your@email.com" autocomplete="email" required>
+          <button class="newsletter-btn" type="submit">Subscribe →</button>
+        </form>
+        <p class="newsletter-privacy">🔒 No spam. No selling your data. Just the good stuff.</p>
+      </div>
+      <div class="newsletter-success" id="newsletterSuccess">
+        <h3>👁 You're in.</h3>
+        <p>Thanks for subscribing. You'll hear from us when there's something worth reading - which is not every day, we promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (persistent) ============================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html" style="text-decoration:none;color:inherit">
+          <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+        </a>
+        <p>A free, open information hub for the full imagination spectrum - from aphantasia to hyperphantasia.</p>
+        <div class="footer-social">
+          <!-- TikTok -->
+          <a class="social-link" href="https://tiktok.com/@mindseye" target="_blank" rel="noopener" title="TikTok">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.16 8.16 0 004.78 1.53V6.82a4.85 4.85 0 01-1.01-.13z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a class="social-link" href="https://instagram.com/mindseye" target="_blank" rel="noopener" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a class="social-link" href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener" title="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="learn.html">Imagination Spectrum</a></li>
+          <li><a href="projlab.html">Projection Lab</a></li>
+          <li><a href="gallery.html">Perspectives</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="learn.html">A–Z Glossary</a></li>
+          <li><a href="whatnow.html">What Now?</a></li>
+          <li><a href="test.html">Take the Test</a></li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div class="footer-col">
+        <h4>Content</h4>
+        <ul class="footer-links">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="https://tiktok.com/@mindseye" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://instagram.com/mindseye" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p>Questions, research suggestions, or your own story to share? Get in touch.</p>
+        <a class="footer-email" href="mailto:hello@mindseye.info">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          hello@mindseye.info
+        </a>
+        <p style="margin-top:1rem">Or find us on socials - we read every message.</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 The Phantasia Project. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="learn.html">A–Z</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="shared.js"></script>
+<script>
+const questions=[
+  // ── VVIQ Block (1–16) ─────────────────────────────────────────
+  {scene:"Imagine a relative or close friend you know well.",q:"Think of their face.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Imagine a relative or close friend you know well.",q:"Their exact body posture, the way they stand.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Imagine a rising sun.",q:"The sky lightening and colours changing.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Imagine a rising sun.",q:"The full disk of the sun appearing over the horizon.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Imagine a country scene with trees, mountains, and a lake.",q:"The contours of the landscape.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Imagine a country scene.",q:"The colours and shapes of trees, grass, and water.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Imagine a favourite shop.",q:"The overall layout of the shop.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Imagine a favourite shop.",q:"The colours, shapes, and sizes of items for sale.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Now close your eyes and imagine the following.",q:"A setting sun. Try to picture the vivid colours of the sky.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Eyes closed.",q:"A plane flying low over a crowd. The sound of the engines and the movement of the crowd.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Eyes closed.",q:"A beautiful garden. The colours, shapes, and sounds.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"Eyes closed.",q:"Walking into a dark cinema or theatre. The experience of adjusting to the darkness.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"A beach scene on a very sunny summer day.",q:"The colour of the sea, sky, and sand.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"A beach scene on a very sunny summer day.",q:"People playing in the water and sunbathers on the beach.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"A busy city street.",q:"The sounds, colours, and movement of traffic and people.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+  {scene:"A busy city street.",q:"The faces and clothing of the people around you.",options:["No image - I see nothing","A vague, shadowy impression","Moderately clear - somewhat like a real image","Quite vivid and reasonably clear","Perfectly lifelike - as vivid as real seeing"]},
+
+  // ── Multi-sensory Block (17–21) ───────────────────────────────
+  {section:"🎵 Auditory Imagery",
+   scene:"Think of a piece of music or a song you know very well.",
+   q:"Without playing it, how clearly can you hear it in your mind right now?",
+   icons:["🔇","📻","🎵","🎶","🎧"],
+   options:["No sound - I hear nothing at all","A faint, vague impression of the melody","Moderately clear - like hearing it through a wall","Quite vivid and clear","Perfectly lifelike - as clear as actually listening"]},
+  {section:"🎵 Auditory Imagery",
+   scene:"Think of someone whose voice you know very well.",
+   q:"How clearly can you hear their voice speaking in your mind?",
+   icons:["🔇","📻","🎵","🎶","🎧"],
+   options:["No sound - I hear nothing","A vague impression - I know how they sound but can't hear them","Moderately clear - their voice is there but faint","Quite vivid - I can hear them fairly clearly","Perfectly lifelike - I could almost mistake it for real"]},
+  {section:"✨ Other Senses",
+   scene:"Think of a distinctive smell - fresh coffee, rain on warm tarmac, or something baking.",
+   q:"How clearly can you sense that smell right now?",
+   icons:["🚫","💨","🌫️","🌊","🌸"],
+   options:["No sensation - I can't smell anything mentally","A very faint impression","Moderately clear - something is there","Quite vivid - I can almost smell it","Perfectly lifelike - as strong as actually smelling it"]},
+  {section:"✨ Other Senses",
+   scene:"Think of a physical sensation - holding a warm mug, cold water on your hands, or soft fabric.",
+   q:"How clearly can you feel that sensation in your body right now?",
+   icons:["🚫","💨","🌫️","🌊","🌸"],
+   options:["No sensation - I feel nothing","A very faint impression","Moderately clear - something is there","Quite vivid","Perfectly lifelike - as strong as the real thing"]},
+  {section:"❤️ Emotional Imagery",
+   scene:"Think of a memory that carries a strong emotion - happiness, grief, pride, or love.",
+   q:"When you bring this to mind, does the emotion return with it?",
+   icons:["😶","😐","🙂","😊","❤️"],
+   options:["Not at all - I recall it happened but feel nothing","Very faintly - a slight echo of the feeling","Moderately - I notice something","Quite strongly - the emotion is clearly present","Very strongly - the feeling almost fully returns"]},
+
+  // ── Involuntary Imagery (22) ──────────────────────────────────
+  {section:"🌀 Involuntary Imagery",
+   scene:"Set aside the scenarios above. Don't try to imagine anything.",
+   q:"Without deliberately trying, does your mind generate images, sounds, or mental content on its own?",
+   icons:["🔕","💤","🌊","🌀","⚡"],
+   options:["Never - my mind stays quiet unless I actively use it","Occasionally - now and then something drifts in","Sometimes - fairly regularly, without my prompting","Often - my mind generates content frequently on its own","Constantly - a near-continuous stream, whether I want it or not"]},
+];
+
+const optIcons=["⬛","🌑","🌗","🌕","⭐"];
+let currentQ=0,answers=[];
+
+function startTest(){
+  document.getElementById('testIntro').style.display='none';
+  document.getElementById('testQuiz').style.display='block';
+  currentQ=0;answers=[];
+  renderQuestion();
+}
+function renderQuestion(){
+  const q=questions[currentQ];
+  const icons=q.icons||optIcons;
+  const pct=(currentQ/questions.length)*100;
+  document.getElementById('progressFill').style.width=pct+'%';
+  const sectionBreak=q.section?`<div class="quiz-section-break"><span>${q.section}</span><span style="margin-left:auto;font-size:.7rem;opacity:.6">Questions ${currentQ+1}–${Math.min(questions.length,currentQ+3)} of ${questions.length}</span></div>`:'';
+  document.getElementById('quizCard').innerHTML=`
+    ${sectionBreak}
+    <div class="quiz-q-num">Question ${currentQ+1} of ${questions.length}</div>
+    <div class="quiz-q-text">${q.q}</div>
+    <div class="quiz-q-scene">${q.scene}</div>
+    <div class="quiz-options">
+      ${q.options.map((o,i)=>`
+        <button class="quiz-option ${answers[currentQ]===i?'selected':''}" onclick="selectAnswer(${i})">
+          <span class="opt-icon">${icons[i]}</span>${o}
+        </button>
+      `).join('')}
+    </div>
+    <div class="quiz-nav">
+      <button class="btn btn-outline" style="padding:.5rem 1rem;font-size:.85rem" onclick="prevQ()" ${currentQ===0?'disabled style="opacity:.3"':''}>← Back</button>
+      <span class="quiz-nav-step">${currentQ+1} / ${questions.length}</span>
+      <button class="btn btn-primary" style="padding:.5rem 1rem;font-size:.85rem" onclick="nextQ()" ${answers[currentQ]===undefined?'disabled style="opacity:.4"':''} id="nextBtn">
+        ${currentQ===questions.length-1?'See my results →':'Next →'}
+      </button>
+    </div>
+  `;
+}
+function selectAnswer(i){
+  answers[currentQ]=i;
+  renderQuestion();
+}
+function prevQ(){if(currentQ>0){currentQ--;renderQuestion();}}
+function nextQ(){
+  if(answers[currentQ]===undefined)return;
+  if(currentQ<questions.length-1){currentQ++;renderQuestion();}
+  else showResult();
+}
+function showResult(){
+  document.getElementById('testQuiz').style.display='none';
+  document.getElementById('testResult').style.display='block';
+
+  // ── VVIQ score (questions 0–15) ──────────────────────────────
+  const vviqAnswers=answers.slice(0,16);
+  const total=vviqAnswers.reduce((s,a)=>s+(a+1),0);
+  const pct=(total-16)/64;
+
+  // ── Multi-sensory scores (questions 16–20, 0–4 → 1–5) ────────
+  const audScore=(answers[16]!==undefined&&answers[17]!==undefined)
+    ?((answers[16]+answers[17])/2)+1 : null;
+  const sensScore=(answers[18]!==undefined&&answers[19]!==undefined)
+    ?((answers[18]+answers[19])/2)+1 : null;
+  const emoScore=answers[20]!==undefined ? answers[20]+1 : null;
+
+  // ── Involuntary imagery (question 21) ────────────────────────
+  const invScore=answers[21]!==undefined ? answers[21]+1 : null;
+
+  // ── VVIQ level ───────────────────────────────────────────────
+  let level,icon,color,hexColor,tagline,desc,famous,wnTab;
+  if(total<=20){
+    level='Aphantasia';icon='⬛';color='var(--rose)';hexColor='#f43f5e';wnTab='aph';
+    tagline='No mind\'s eye - and that\'s completely valid.';
+    desc='Your score strongly suggests aphantasia - you experience little to no voluntary visual imagery. When you try to picture something, you get conceptual knowledge but no visual impression. You\'re in the ~4% of people whose brain doesn\'t generate visual imagery voluntarily. This doesn\'t affect intelligence, creativity, or visual perception at all.';
+    famous=['Blake Ross','Ed Catmull','Craig Venter'];
+  } else if(total<=32){
+    level='Low Phantasia';icon='🌑';color='var(--amber)';hexColor='#F59E0B';wnTab='mid';
+    tagline='A flicker in the dark.';
+    desc='You experience very low imagery vividness - images are present but extremely dim, faint, or unstable. You might catch a flicker before it disappears. This is below average but distinct from complete aphantasia.';
+    famous=['Many visual thinkers report surprising variation'];
+  } else if(total<=48){
+    level='Phantasia';icon='🌗';color='var(--violet-light)';hexColor='#4ade80';wnTab='mid';
+    tagline='A typical imagination - which is rarer than you\'d think.';
+    desc='Your imagery is around average - you can form mental images with reasonable clarity but they\'re unlikely to be vivid or photorealistic. Images may shift or fade. This is the most common experience, shared by roughly half the population.';
+    famous=['Most of the population','Many writers, scientists, and creatives'];
+  } else if(total<=60){
+    level='Vivid Phantasia';icon='🌕';color='var(--teal)';hexColor='#06B6D4';wnTab='hyper';
+    tagline='Your inner world is genuinely visual.';
+    desc='You experience vivid, clear mental imagery above the average. Your inner world has genuine visual texture - books play out like films, you can mentally rotate and examine objects, and memories carry visual detail.';
+    famous=['Many visual artists and architects'];
+  } else {
+    level='Hyperphantasia';icon='⭐';color='#10f2c8';hexColor='#10f2c8';wnTab='hyper';
+    tagline='Full HD cinema - playing 24/7 in your mind.';
+    desc='Your score suggests hyperphantasia - extremely vivid, near-photorealistic voluntary imagery. Your mind\'s cinema runs continuously and in HD. You\'ve likely assumed this is normal for everyone; it isn\'t. You\'re in approximately the top 3–5% of imagery vividness.';
+    famous=['Temple Grandin','Many visual artists','Various synesthetes'];
+  }
+
+  // ── Sensory profile labels ────────────────────────────────────
+  function sLabel(s){
+    if(s===null)return'-';
+    if(s<1.8)return'Very low';
+    if(s<2.8)return'Low';
+    if(s<3.8)return'Moderate';
+    if(s<4.5)return'High';
+    return'Very high';
+  }
+  function sPct(s){return s===null?0:Math.round((s-1)/4*100);}
+
+  const visLabel=sLabel(1+(pct*4));
+  const visPct=Math.max(2,Math.round(pct*100));
+
+  // ── Involuntary interpretation ────────────────────────────────
+  let invIcon,invColor,invLabel,invDesc;
+  if(invScore===null){
+    invIcon='-';invColor='var(--muted)';invLabel='Not assessed';invDesc='';
+  } else if(invScore<=2){
+    invIcon='🔕';invColor='var(--teal)';
+    invLabel='Primarily voluntary';
+    invDesc='Your imagery appears to respond when you call on it and quiet when you don\'t. You have a high degree of control over your mental content.';
+  } else if(invScore===3){
+    invIcon='🌊';invColor='var(--amber)';
+    invLabel='Mixed - voluntary and spontaneous';
+    invDesc='You experience a blend: deliberate imagery works well, but your mind also generates content without being asked. A fairly common profile.';
+  } else {
+    invIcon='⚡';invColor='var(--rose)';
+    invLabel='Significantly involuntary';
+    invDesc='Your mind generates content spontaneously and often - imagery, sounds, or mental scenes that arrive without your choosing. This is one of the defining features of hyperphantasia as a lived experience, and it has both gifts and costs.';
+  }
+
+  // ── Combination insight ───────────────────────────────────────
+  let comboNote='';
+  if(invScore!==null){
+    const highVVIQ=total>60, lowVVIQ=total<=20, highInv=invScore>=4, lowInv=invScore<=2;
+    if(highVVIQ&&highInv) comboNote='Your profile shows both very high voluntary imagery <em>and</em> significant involuntary imagery - this is the classic full hyperphantasia experience. The cinema runs whether you\'re directing it or not.';
+    else if(highVVIQ&&lowInv) comboNote='An interesting profile: very high voluntary imagery but low involuntary imagery. You can generate vivid mental content at will, but your mind stays relatively quiet when you\'re not actively using it. Strong control combined with strong ability.';
+    else if(lowVVIQ&&highInv) comboNote='Genuinely unusual and worth noting: low voluntary visual imagery but significant spontaneous mental content. Your imagery system may be more active involuntarily than it is when deliberately engaged - relevant to how aphantasia and dreaming interact.';
+    else if(lowVVIQ&&lowInv) comboNote='A consistent aphantasia profile - minimal imagery both when deliberately attempting it and spontaneously. Your mind works through concepts, language, and other non-visual systems rather than pictures.';
+  }
+
+  const wnTab_=wnTab;
+
+  document.getElementById('resultCard').innerHTML=`
+    <div class="result-icon">${icon}</div>
+    <div class="result-level" style="color:${color}">${level}</div>
+    <div class="result-score">VVIQ score: ${total} / 80 · ${Math.round(pct*100)}th percentile</div>
+    <div class="result-desc">${desc}</div>
+
+    <div class="result-spectrum">
+      <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-bottom:.5rem">
+        <span>Aphantasia</span><span>Typical</span><span>Hyperphantasia</span>
+      </div>
+      <div style="background:var(--bg3);height:12px;border-radius:6px;overflow:hidden">
+        <div id="specBar" style="height:100%;width:2%;background:${color};border-radius:6px;transition:width 1s ease"></div>
+      </div>
+      <div style="margin-top:.5rem;text-align:center;font-size:.8rem;color:${color};font-weight:700">You are here</div>
+    </div>
+
+    <div class="sensory-profile">
+      <div class="sensory-profile-title">Your sensory profile</div>
+      <div class="sensory-row">
+        <span class="sensory-label">👁 Visual</span>
+        <div class="sensory-track"><div class="sensory-fill" id="sf-vis" style="background:${color}"></div></div>
+        <span class="sensory-val">${visLabel}</span>
+      </div>
+      <div class="sensory-row">
+        <span class="sensory-label">🎵 Auditory</span>
+        <div class="sensory-track"><div class="sensory-fill" id="sf-aud" style="background:#a855f7"></div></div>
+        <span class="sensory-val">${sLabel(audScore)}</span>
+      </div>
+      <div class="sensory-row">
+        <span class="sensory-label">✨ Other senses</span>
+        <div class="sensory-track"><div class="sensory-fill" id="sf-sens" style="background:#F59E0B"></div></div>
+        <span class="sensory-val">${sLabel(sensScore)}</span>
+      </div>
+      <div class="sensory-row">
+        <span class="sensory-label">❤️ Emotional</span>
+        <div class="sensory-track"><div class="sensory-fill" id="sf-emo" style="background:#f43f5e"></div></div>
+        <span class="sensory-val">${sLabel(emoScore)}</span>
+      </div>
+    </div>
+
+    ${invScore!==null?`<div class="inv-block">
+      <div class="inv-icon">${invIcon}</div>
+      <div>
+        <div class="inv-label" style="color:${invColor}">${invLabel}</div>
+        <div class="inv-desc">${invDesc}</div>
+      </div>
+    </div>`:''}
+
+    ${comboNote?`<div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;margin-bottom:1.25rem;font-size:.85rem;color:var(--muted);line-height:1.6"><strong style="color:var(--text);display:block;margin-bottom:.3rem">What your profile combination suggests</strong>${comboNote}</div>`:''}
+
+    <div class="result-famous">
+      <h4>Notable people near your visual level</h4>
+      <div class="famous-chips">${famous.map(f=>`<span class="famous-chip">${f}</span>`).join('')}</div>
+    </div>
+
+    <div class="share-card-section">
+      <h3>📲 Share your result</h3>
+      <p>Download your result card and post it - perfect for TikTok, Instagram Stories, or sending to that one friend who needs to take the test.</p>
+      <div class="share-preview"><canvas id="shareCanvas" width="1080" height="1080" style="width:320px;height:320px"></canvas></div>
+      <div class="share-btns">
+        <button class="share-btn share-btn-download" onclick="downloadCard()">⬇ Download card</button>
+        <button class="share-btn share-btn-copy" id="copyBtn" onclick="copyCardLink()">🔗 Copy link</button>
+      </div>
+      <div class="share-hint">📸 Or just screenshot - it's designed for it</div>
+    </div>
+
+    <div class="post-cta" style="margin-top:2rem">
+      <h3>What does this mean for your actual life?</h3>
+      <p>Creativity, memory, sleep, relationships, reading - the practical guide to living with your result.</p>
+      <button class="btn btn-primary" onclick="openWhatNow('${wnTab_}')">What now? →</button>
+    </div>
+  `;
+
+  setTimeout(()=>{
+    document.getElementById('specBar').style.width=Math.max(2,visPct)+'%';
+    document.getElementById('sf-vis').style.width=visPct+'%';
+    document.getElementById('sf-aud').style.width=sPct(audScore)+'%';
+    document.getElementById('sf-sens').style.width=sPct(sensScore)+'%';
+    document.getElementById('sf-emo').style.width=sPct(emoScore)+'%';
+    drawShareCard(level,tagline,total,pct,hexColor);
+  },120);
+}
+function drawShareCard(level,tagline,total,pct,hexColor){
+  const canvas=document.getElementById('shareCanvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const W=1080,H=1080;
+  const bg=ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,'#080812');bg.addColorStop(0.5,'#0f0822');bg.addColorStop(1,'#080812');
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  const glow=ctx.createRadialGradient(W*0.8,H*0.15,0,W*0.8,H*0.15,380);
+  glow.addColorStop(0,hexColor+'28');glow.addColorStop(1,'transparent');
+  ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);
+  const glow2=ctx.createRadialGradient(W*0.2,H*0.85,0,W*0.2,H*0.85,300);
+  glow2.addColorStop(0,'#16a34a22');glow2.addColorStop(1,'transparent');
+  ctx.fillStyle=glow2;ctx.fillRect(0,0,W,H);
+  ctx.save();ctx.globalAlpha=0.03;
+  for(let i=0;i<8000;i++){const x=Math.random()*W,y=Math.random()*H;ctx.fillStyle=`rgba(255,255,255,${Math.random()})`;ctx.fillRect(x,y,1,1);}
+  ctx.restore();
+  ctx.save();ctx.strokeStyle='rgba(255,255,255,0.07)';ctx.lineWidth=1.5;
+  roundRect(ctx,24,24,W-48,H-48,24);ctx.stroke();ctx.restore();
+  const barY=72,barH=10,barX=80,barW=W-160;
+  ctx.save();ctx.beginPath();ctx.roundRect(barX,barY,barW,barH,barH/2);ctx.clip();
+  const specGrad=ctx.createLinearGradient(barX,0,barX+barW,0);
+  specGrad.addColorStop(0,'#0d0d1a');specGrad.addColorStop(0.12,'#14532d');
+  specGrad.addColorStop(0.45,'#16a34a');specGrad.addColorStop(0.6,'#4ade80');
+  specGrad.addColorStop(0.8,'#06b6d4');specGrad.addColorStop(1,'#10f2c8');
+  ctx.fillStyle=specGrad;ctx.fillRect(barX,barY,barW,barH);ctx.restore();
+  const thumbX=barX+barW*Math.max(0.02,pct);
+  ctx.save();ctx.beginPath();ctx.arc(thumbX,barY+barH/2,14,0,Math.PI*2);
+  ctx.fillStyle=hexColor;ctx.shadowColor=hexColor;ctx.shadowBlur=20;ctx.fill();ctx.restore();
+  ctx.save();ctx.font='500 32px sans-serif';ctx.fillStyle='rgba(255,255,255,0.35)';
+  ctx.fillText("THE PHANTASIA PROJECT · TEST",80,148);ctx.restore();
+  ctx.save();ctx.font='160px sans-serif';ctx.textAlign='left';
+  ctx.fillText(scoreToEmoji(pct),68,380);ctx.restore();
+  ctx.save();ctx.font='bold 108px sans-serif';ctx.textAlign='left';
+  const nameGrad=ctx.createLinearGradient(80,0,780,0);
+  nameGrad.addColorStop(0,hexColor);nameGrad.addColorStop(1,'#ffffff');
+  ctx.fillStyle=nameGrad;ctx.fillText(level,80,490);ctx.restore();
+  ctx.save();ctx.font='400 40px sans-serif';ctx.fillStyle='rgba(255,255,255,0.65)';
+  ctx.textAlign='left';wrapText(ctx,tagline,80,558,W-160,54);ctx.restore();
+  ctx.save();ctx.strokeStyle='rgba(255,255,255,0.08)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(80,650);ctx.lineTo(W-80,650);ctx.stroke();ctx.restore();
+  const pillX=80,pillY=690,pillW=260,pillH=72,pillR=36;
+  ctx.save();ctx.beginPath();ctx.roundRect(pillX,pillY,pillW,pillH,pillR);
+  ctx.fillStyle=hexColor+'22';ctx.fill();ctx.strokeStyle=hexColor+'55';
+  ctx.lineWidth=1.5;ctx.stroke();ctx.restore();
+  ctx.save();ctx.font='bold 36px sans-serif';ctx.fillStyle=hexColor;ctx.textAlign='center';
+  ctx.fillText(`${Math.round(pct*100)}th percentile`,pillX+pillW/2,pillY+pillH/2+12);ctx.restore();
+  ctx.save();ctx.font='400 34px sans-serif';ctx.fillStyle='rgba(255,255,255,0.45)';
+  ctx.textAlign='left';
+  ctx.fillText(`VVIQ score: ${answers.slice(0,16).reduce((s,a)=>s+(a+1),0)} / 80`,366,pillY+pillH/2+12);
+  ctx.restore();
+  ctx.save();ctx.font='400 36px sans-serif';ctx.fillStyle='rgba(255,255,255,0.3)';
+  ctx.textAlign='left';ctx.fillText('What do YOU see? Take the free test at',80,840);ctx.restore();
+  ctx.save();ctx.font='bold 42px sans-serif';ctx.fillStyle=hexColor;ctx.textAlign='left';
+  ctx.fillText('thephantasiaproject.com',80,890);ctx.restore();
+  ctx.save();ctx.font='400 28px sans-serif';ctx.fillStyle='rgba(255,255,255,0.18)';
+  ctx.textAlign='left';ctx.fillText('Close your eyes. Picture an apple. What do you see?',80,968);ctx.restore();
+}
+
+function scoreToEmoji(pct){
+  if(pct<=0.07)return'⬛';if(pct<=0.22)return'🌑';if(pct<=0.48)return'🌗';
+  if(pct<=0.7)return'🌕';return'⭐';
+}
+
+function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+}
+
+function wrapText(ctx,text,x,y,maxW,lineH){
+  const words=text.split(' ');let line='';
+  for(let n=0;n<words.length;n++){
+    const test=line+words[n]+' ';
+    if(ctx.measureText(test).width>maxW&&n>0){ctx.fillText(line,x,y);line=words[n]+' ';y+=lineH;}
+    else{line=test;}
+  }
+  ctx.fillText(line,x,y);
+}
+
+function downloadCard(){
+  const canvas=document.getElementById('shareCanvas');if(!canvas)return;
+  const a=document.createElement('a');a.download='my-phantasia-result.png';
+  a.href=canvas.toDataURL('image/png');a.click();
+}
+
+function copyCardLink(){
+  const url='https://thephantasiaproject.com/test';
+  navigator.clipboard.writeText(url).then(()=>{
+    const btn=document.getElementById('copyBtn');if(!btn)return;
+    btn.classList.add('copied');btn.textContent='✓ Copied!';
+    setTimeout(()=>{btn.classList.remove('copied');btn.innerHTML='🔗 Copy link';},2200);
+  });
+}
+
+function resetTest(){
+  document.getElementById('testResult').style.display='none';
+  document.getElementById('testIntro').style.display='block';
+  currentQ=0;answers=[];
+}
+
+function openWhatNow(tab){
+  location.href='whatnow.html';
+  const tabMap={aph:0,hyper:1,mid:2};
+  const idx=tabMap[tab]??2;
+  setTimeout(()=>{
+    const tabs=document.querySelectorAll('.wn-tab');
+    if(tabs[idx])switchWnTab(['aph','hyper','mid'][idx],tabs[idx]);
+  },50);
+}
+
+function shareTest(btn){
+  const url=window.location.href.split('?')[0].split('#')[0];
+  navigator.clipboard.writeText(url).then(()=>{
+    const orig=btn.textContent;
+    btn.textContent='✓ Copied!';
+    setTimeout(()=>{btn.textContent=orig;},2500);
+  }).catch(()=>{
+    btn.textContent='thephantasiaproject.com';
+    setTimeout(()=>{btn.textContent='Copy the test link →';},3000);
+  });
+}
+</script>
+
+<!-- Netlify Forms - static declarations for deploy-time detection -->
+<form name="newsletter" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="newsletter">
+  <input name="email">
+</form>
+<form name="gallery" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="gallery">
+  <input name="type"><input name="text"><input name="name">
+  <input name="country"><input name="email"><input name="prompt">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+

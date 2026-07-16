@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  THE PHANTASIA PROJECT - BLOG POST TEMPLATE
+  ============================================================
+  HOW TO USE:
+  1. Duplicate this file and rename it to your URL slug
+     e.g.  blog/why-i-cant-visualise-faces.html
+     → live at:  thephantasiaproject.com/blog/why-i-cant-visualise-faces
+
+  2. Find every  @@PLACEHOLDER@@  and replace it with real content.
+     There are 12 in the <head> and 7 in the <body>.
+     Your editor's Find & Replace makes this quick.
+
+  3. In _redirects (root folder), add one line:
+     /blog/your-slug   /blog/your-slug.html   200
+
+  4. Add a link card to blog.html if you want it listed there.
+
+  PLACEHOLDER REFERENCE:
+  @@SLUG@@          URL slug only, no slashes - e.g.  why-i-cant-visualise-faces
+  @@TITLE@@         Full post title - e.g.  Why I Can't Visualise Faces
+  @@DESCRIPTION@@   1–2 sentence meta description, ~150 chars
+  @@KEYWORDS@@      Comma-separated keywords
+  @@DATE_ISO@@      ISO 8601 date - e.g.  2025-06-01
+  @@DATE_DISPLAY@@  Human date - e.g.  June 2025
+  @@READ_TIME@@     e.g.  5 min read
+  @@EMOJI@@         Single emoji representing the post - e.g.  🧠
+  @@TAG_LABEL@@     Category label - e.g.  My Experience / Comparison / Research
+  @@TAG_CLASS@@     CSS class for tag colour:
+                      tag-violet  (green)  →  personal / experience posts
+                      tag-teal               →  comparison posts
+                      tag-amber              →  research / science posts
+                      tag-rose               →  opinion posts
+  @@HERO_GRADIENT@@ CSS gradient for header background
+                      e.g.  linear-gradient(135deg,#052e16,#0d1a33)
+  @@BODY@@          The post body HTML - see the BODY STRUCTURE section below
+
+  BODY STRUCTURE - use these elements inside @@BODY@@:
+    <p>Paragraph text</p>
+    <h3>Section heading</h3>
+    <blockquote>Pull quote</blockquote>
+    <ul><li>List item</li></ul>
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ① Change these 12 values for every post -->
+  <title>@@TITLE@@ - The Phantasia Project</title>
+  <meta name="description" content="@@DESCRIPTION@@">
+  <meta name="keywords" content="@@KEYWORDS@@">
+  <meta name="author" content="JD - The Phantasia Project">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thephantasiaproject.com/blog/@@SLUG@@">
+  <meta name="theme-color" content="#080812">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../favicon.svg">
+  <link rel="manifest" href="../manifest.json">
+
+  <!-- Open Graph - controls how this post looks when shared on socials -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thephantasiaproject.com/blog/@@SLUG@@">
+  <meta property="og:title" content="@@TITLE@@ - The Phantasia Project">
+  <meta property="og:description" content="@@DESCRIPTION@@">
+  <meta property="og:site_name" content="The Phantasia Project">
+  <meta property="og:image" content="https://thephantasiaproject.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="@@DATE_ISO@@">
+  <meta property="article:author" content="JD">
+  <meta property="article:section" content="@@TAG_LABEL@@">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@phantasiaproject">
+  <meta name="twitter:title" content="@@TITLE@@ - The Phantasia Project">
+  <meta name="twitter:description" content="@@DESCRIPTION@@">
+  <meta name="twitter:image" content="https://thephantasiaproject.com/og-image.png">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "@@TITLE@@",
+    "description": "@@DESCRIPTION@@",
+    "url": "https://thephantasiaproject.com/blog/@@SLUG@@",
+    "datePublished": "@@DATE_ISO@@",
+    "dateModified": "@@DATE_ISO@@",
+    "author": {
+      "@type": "Person",
+      "name": "JD",
+      "url": "https://thephantasiaproject.com/blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Phantasia Project",
+      "url": "https://thephantasiaproject.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://thephantasiaproject.com/blog/@@SLUG@@"
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "The Phantasia Project Blog",
+      "url": "https://thephantasiaproject.com/blog"
+    }
+  }
+  </script>
+
+  <!-- Fonts + styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css">
+</head>
+<body>
+<div class="noise-overlay"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../index.html" style="text-decoration:none;color:inherit">
+    <img src="../PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+  </a>
+  <div class="nav-links">
+    <a href="../learn.html">Learn</a>
+    <a href="../research.html">Research</a>
+    <a href="../projlab.html" style="color:var(--teal);display:inline-flex;align-items:center;gap:.4rem"><span class="nav-pulse-dot"></span>Projection Lab</a>
+    <a href="../gallery.html">Diaries</a>
+    <a href="../blog.html">My Story</a>
+    <a href="../videos.html">Videos</a>
+    <button class="nav-cta" onclick="location.href='../test.html'">Take the Test →</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../learn.html" onclick="toggleMobile()">Learn</a>
+  <a href="../research.html" onclick="toggleMobile()">Research</a>
+  <a href="../projlab.html" onclick="toggleMobile()" style="color:var(--teal);display:flex;align-items:center;gap:.5rem"><span class="nav-pulse-dot"></span>Projection Lab - New Science</a>
+  <a href="../gallery.html" onclick="toggleMobile()">Diaries - What Others See</a>
+  <a href="../blog.html" onclick="toggleMobile()">My Story</a>
+  <a href="../videos.html" onclick="toggleMobile()">Videos</a>
+  <a href="../test.html" onclick="toggleMobile()" style="color:var(--violet-light)">Take the Test →</a>
+</div>
+
+<!-- ② POST HEADER - set @@HERO_GRADIENT@@ and @@EMOJI@@ -->
+<div class="post-header" style="background:@@HERO_GRADIENT@@">
+  <div class="orb" style="width:400px;height:400px;top:-100px;right:-50px;background:rgba(22,163,74,.2)"></div>
+  <div class="container" style="position:relative;z-index:1">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="margin-bottom:1.5rem;font-size:.85rem;color:var(--muted)">
+      <a href="../index.html" style="color:var(--muted);text-decoration:none">Home</a>
+      <span style="margin:0 .5rem">›</span>
+      <a href="../blog.html" style="color:var(--muted);text-decoration:none">My Story</a>
+      <span style="margin:0 .5rem">›</span>
+      <span style="color:var(--text)">@@TITLE@@</span>
+    </nav>
+
+    <!-- ③ Set @@TAG_CLASS@@ and @@TAG_LABEL@@ -->
+    <span class="tag @@TAG_CLASS@@" style="margin-bottom:1rem;display:inline-block">@@TAG_LABEL@@</span>
+
+    <!-- ④ Set @@EMOJI@@ and @@TITLE@@ -->
+    <h1 class="post-title">@@EMOJI@@ @@TITLE@@</h1>
+
+    <!-- ⑤ Set @@DATE_DISPLAY@@ and @@READ_TIME@@ -->
+    <div class="post-meta">
+      <span>🌊 JD · Hyperphantasia</span>
+      <span>·</span>
+      <span>@@DATE_DISPLAY@@</span>
+      <span>·</span>
+      <span>@@READ_TIME@@</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ⑥ POST BODY - replace @@BODY@@ with your content -->
+<div class="container">
+  <div class="post-body">
+    <div class="prose">
+
+@@BODY@@
+
+    </div>
+
+    <!-- CTA - leave this as-is -->
+    <div class="post-cta">
+      <h3>Where do you land?</h3>
+      <p>If this resonated - or confused you - the free test will tell you exactly where you sit on the spectrum.</p>
+      <button class="btn btn-primary" onclick="location.href='../test.html'">Take the free test →</button>
+    </div>
+
+    <!-- Post navigation (optional - link to prev/next posts) -->
+    <div style="display:flex;justify-content:space-between;padding:2rem 0;border-top:1px solid var(--border);margin-top:1rem;gap:1rem;flex-wrap:wrap">
+      <a href="../blog.html" style="color:var(--muted);text-decoration:none;font-size:.9rem;display:inline-flex;align-items:center;gap:.4rem">
+        ← All posts
+      </a>
+      <!--
+        Add a link to the next post here when you have one:
+        <a href="next-post-slug.html" style="color:var(--violet-light);text-decoration:none;font-size:.9rem">
+          Next post title →
+        </a>
+      -->
+    </div>
+
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h2>New posts. No noise.</h2>
+        <p>Get notified when a new post lands. No tracking, no ads, unsubscribe any time.</p>
+      </div>
+      <div id="newsletterWrap">
+        <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="hidden" name="form-name" value="newsletter">
+          <input class="newsletter-input" type="email" name="email" id="newsletterEmail" placeholder="your@email.com" autocomplete="email" required>
+          <button class="newsletter-btn" type="submit">Subscribe →</button>
+        </form>
+      </div>
+      <div id="newsletterSuccess" style="display:none;color:var(--violet-light);font-weight:600">
+        ✓ You're in.
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../shared.js"></script>
+
+<!-- Netlify Forms - static declarations for deploy-time detection -->
+<form name="newsletter" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="newsletter">
+  <input name="email">
+</form>
+<form name="gallery" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="gallery">
+  <input name="type"><input name="text"><input name="name">
+  <input name="country"><input name="email"><input name="prompt">
+</form>
+</body>
+</html>
+
+
+
+
+
+

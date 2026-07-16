@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <title>My Story - Living With Hyperphantasia | The Phantasia Project</title>
+  <meta name="description" content="JD has hyperphantasia. Their partner has aphantasia. These are personal posts about what it's actually like to live at opposite ends of the imagination spectrum.">
+  <meta name="keywords" content="hyperphantasia experience, aphantasia personal story, imagination spectrum blog, living with hyperphantasia, aphantasia relationship">
+  <link rel="canonical" href="https://thephantasiaproject.com/blog">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#080812">
+  <meta name="author" content="JD - The Phantasia Project">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="https://thephantasiaproject.com/blog">
+  <meta property="og:title" content="My Story - Living With Hyperphantasia | The Phantasia Project">
+  <meta property="og:description" content="JD has hyperphantasia. Their partner has aphantasia. These are personal posts about what it's actually like to live at opposite ends of the imagination spectrum.">
+  <meta property="og:site_name" content="The Phantasia Project">
+  <meta property="og:image" content="https://thephantasiaproject.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@phantasiaproject">
+  <meta name="twitter:title" content="My Story - Living With Hyperphantasia | The Phantasia Project">
+  <meta name="twitter:description" content="JD has hyperphantasia. Their partner has aphantasia. These are personal posts about what it's actually like to live at opposite ends of the imagination spectrum.">
+  <meta name="twitter:image" content="https://thephantasiaproject.com/og-image.png">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "My Story - The Phantasia Project Blog",
+  "description": "Personal posts about hyperphantasia and aphantasia from JD - written from the vivid end of the spectrum.",
+  "author": {
+    "@type": "Person",
+    "name": "JD"
+  },
+  "url": "https://thephantasiaproject.com/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Phantasia Project",
+    "url": "https://thephantasiaproject.com"
+  }
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="noise-overlay"></div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html" style="text-decoration:none;color:inherit">
+    <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+  </a>
+  <div class="nav-links">
+    <a href="learn.html">Imagination Spectrum</a>
+    <a href="research.html">Research</a>
+    <a href="projlab.html">Projection Lab</a>
+    <a href="gallery.html">Perspectives</a>
+    <a href="blog.html">My Story</a>
+    <a href="videos.html">Videos</a>
+    <button class="nav-cta" onclick="location.href='test.html'">Take the Test →</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="learn.html" onclick="toggleMobile()">Imagination Spectrum</a>
+  <a href="research.html" onclick="toggleMobile()">Research</a>
+  <a href="projlab.html" onclick="toggleMobile()">Projection Lab</a>
+  <a href="gallery.html" onclick="toggleMobile()">Perspectives</a>
+  <a href="blog.html" onclick="toggleMobile()">My Story</a>
+  <a href="videos.html" onclick="toggleMobile()">Videos</a>
+  <a href="test.html" onclick="toggleMobile()" style="color:var(--violet-light)">Take the Test →</a>
+</div>
+
+<div id="blog">
+  <div id="blogList">
+    <section class="blog-hero">
+      <div class="orb" style="width:500px;height:500px;top:-100px;right:-100px;background:rgba(6,182,212,.15)"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div class="section-label">Personal</div>
+        <h1>My Story</h1>
+        <p>I'm JD - I have hyperphantasia, which means my imagination runs in photorealistic HD, constantly. My partner has aphantasia and sees nothing at all. These are my posts about what that's actually like.</p>
+        <div class="blog-author-banner">
+          <div class="author-avatar" style="background:linear-gradient(135deg,rgba(6,182,212,.3),rgba(22,163,74,.3))">🌊</div>
+          <div class="author-info"><strong>JD</strong><span>Hyperphantasia - written from the vivid end of the spectrum</span></div>
+        </div>
+      </div>
+    </section>
+    <div class="container" style="padding-bottom:4rem">
+      <div class="blog-grid" id="blogGrid"></div>
+    </div>
+  </div>
+  <div id="blogPost" class="blog-post-view"></div>
+
+</div>
+<!-- ============================== NEWSLETTER (persistent) ============================== -->
+<section class="newsletter-section">
+  <div class="orb"></div>
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="section-label">Stay in the loop</div>
+      <h2>New posts and videos,<br>straight to your inbox</h2>
+      <p>No noise - just new blog posts, video drops, and the occasional piece of research worth knowing about. Free, obviously. Unsubscribe any time.</p>
+      <div id="newsletterWrap">
+        <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="hidden" name="form-name" value="newsletter">
+          <input class="newsletter-input" type="email" name="email" id="newsletterEmail" placeholder="your@email.com" autocomplete="email" required>
+          <button class="newsletter-btn" type="submit">Subscribe →</button>
+        </form>
+        <p class="newsletter-privacy">🔒 No spam. No selling your data. Just the good stuff.</p>
+      </div>
+      <div class="newsletter-success" id="newsletterSuccess">
+        <h3>👁 You're in.</h3>
+        <p>Thanks for subscribing. You'll hear from us when there's something worth reading - which is not every day, we promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (persistent) ============================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html" style="text-decoration:none;color:inherit">
+          <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+        </a>
+        <p>A free, open information hub for the full imagination spectrum - from aphantasia to hyperphantasia.</p>
+        <div class="footer-social">
+          <!-- TikTok -->
+          <a class="social-link" href="https://tiktok.com/@mindseye" target="_blank" rel="noopener" title="TikTok">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.16 8.16 0 004.78 1.53V6.82a4.85 4.85 0 01-1.01-.13z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a class="social-link" href="https://instagram.com/mindseye" target="_blank" rel="noopener" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a class="social-link" href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener" title="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="learn.html">Imagination Spectrum</a></li>
+          <li><a href="projlab.html">Projection Lab</a></li>
+          <li><a href="gallery.html">Perspectives</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="learn.html">A–Z Glossary</a></li>
+          <li><a href="whatnow.html">What Now?</a></li>
+          <li><a href="test.html">Take the Test</a></li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div class="footer-col">
+        <h4>Content</h4>
+        <ul class="footer-links">
+          <li><a href="blog.html">My Story</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="https://tiktok.com/@mindseye" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://instagram.com/mindseye" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p>Questions, research suggestions, or your own story to share? Get in touch.</p>
+        <a class="footer-email" href="mailto:hello@mindseye.info">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          hello@mindseye.info
+        </a>
+        <p style="margin-top:1rem">Or find us on socials - we read every message.</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 The Phantasia Project. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="learn.html">A–Z</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="shared.js"></script>
+<script>
+const POST_SLUGS=[
+  'i-didnt-know-my-brain-was-different',
+  'my-brain-never-switches-off',
+  'we-read-the-same-book',
+  'things-i-casually-assumed-everyone-could-do',
+  'what-watching-a-film-together-means',
+  'why-i-made-this',
+];
+const posts=[
+  {
+    id:0,
+    title:"I Didn't Know My Brain Was Different Until I Was an Adult",
+    emoji:"🍎",bg:"linear-gradient(135deg,#052e16,#0d1a33)",
+    tag:"My Experience",tagType:"tag-violet",
+    author:"JD",authorEmoji:"🌊",authorType:"Hyperphantasia",
+    date:"January 2025",readTime:"6 min read",
+    excerpt:"I'd spent my whole life assuming everyone's head worked like mine. Then a completely throwaway question one evening broke that assumption permanently.",
+    body:`<div class="prose">
+<p>It was one of those nothing evenings. We'd run out of things to watch and were just kind of sitting there, and for some reason I decided to ask my partner to close their eyes and picture an apple. I don't know what I was expecting - maybe I wanted to know if they saw the same slightly battered red one I always get, the one with the specific dent near the stem that I have absolutely no explanation for.</p>
+<p>"What apple?" they said.</p>
+<p>I laughed. Obviously they were taking the mick.</p>
+<p>They were not taking the mick.</p>
+<blockquote>"There's no picture. I know it's an apple, I know it's red, I know it sits on a surface - but there's nothing to look at. There's just… the idea of one."</blockquote>
+<p>I sat with that. Then kept sitting with it. Then started firing off what I can only describe as increasingly panicked follow-up questions.</p>
+<h3>What I actually see (apparently not everyone's normal)</h3>
+<p>When I picture an apple, I see an apple. Not "sort of imagine the concept of" an apple - actually see one, right there, fully formed, with colour and texture and a whole specific quality of light I can't even describe properly. I can rotate it. I can zoom in. If I get distracted I'll end up spending ten minutes mentally following the way light moves across the skin of a piece of fruit I conjured from nothing, and I'll lose the thread of whatever conversation I was meant to be having.</p>
+<p>I genuinely had no idea this wasn't standard. "Picture it in your mind" had always been a completely literal instruction to me. I'd heard it in school, in meditation apps, in cooking videos - and every single time I'd just… done it. Seen the thing. Assumed everyone else was doing exactly the same.</p>
+<h3>The hour that followed</h3>
+<p>We went properly down the rabbit hole. I kept naming things, my partner kept telling me there was no image. Their childhood bedroom - nothing. Our first holiday together - they remembered it happened, how it felt, what we did, but couldn't picture a single moment of it. Not even a vague impression. Just knowledge, floating around with no visual attached to it.</p>
+<p>Meanwhile I'm sitting there realising I've been walking around my whole life with a cinema running in my head and had never once thought to mention it, because I assumed it was completely standard-issue human equipment.</p>
+<blockquote>We'd been together for years and had been watching completely different shows. We just didn't know it.</blockquote>
+<p>The word "aphantasia" came up about half an hour into the phone research spiral. Then "hyperphantasia" - and suddenly a lot of things made sense about me that I'd just quietly filed under personality quirks. Why I can't read anything remotely scary before bed. Why anxious thoughts don't stay abstract - they arrive fully rendered, with rooms and faces and accurate lighting. Why guided meditation has always felt slightly overwhelming rather than relaxing.</p>
+<p>The apple genuinely changed how I understood my own brain. Which is a weird sentence to write, but here we are.</p>
+</div>`
+  },
+  {
+    id:1,
+    title:"My Brain Never Switches Off - The Exhausting Side of Hyperphantasia",
+    emoji:"🌀",bg:"linear-gradient(135deg,#0a0a2a,#1a0a3a)",
+    tag:"My Experience",tagType:"tag-violet",
+    author:"JD",authorEmoji:"🌊",authorType:"Hyperphantasia",
+    date:"February 2025",readTime:"7 min read",
+    excerpt:"Everyone talks about hyperphantasia like it's a superpower. Nobody mentions the part where your brain is running a full production at 2am and you'd really quite like it to stop.",
+    body:`<div class="prose">
+<p>There's a version of the hyperphantasia conversation that goes: "Oh wow, so you can visualise things really vividly? That must be so useful for creativity!" And yeah, in some ways, sure. But what this framing misses - pretty significantly - is that the vividness doesn't ask permission. It doesn't check whether you're in a good headspace before deciding to replay something. It doesn't have an off switch.</p>
+<p>My partner has aphantasia. When they're trying to sleep, their mind apparently just… quiets down. I asked them to describe what that's like and they seemed confused that I was even asking, in the same way I'd be confused if someone asked me to describe what breathing feels like. It's just what happens. The brain goes quiet. Sleep follows.</p>
+<blockquote>I have genuinely lost count of the number of times I've been lying in the dark watching a mental reconstruction of a mildly awkward conversation from three weeks ago, in a level of detail that serves absolutely no purpose whatsoever.</blockquote>
+<h3>What "intrusive" actually means</h3>
+<p>The word intrusive is doing a lot of work here and I want to be specific about it - because it doesn't mean I'm choosing to think about difficult things. It means that difficult things show up, fully formed and uninvited, in a way that feels more like being shown something than like remembering it.</p>
+<p>Watched a horror film? Congratulations, those images are now part of the visual library and will be retrievable indefinitely. Read something upsetting in the news? The brain will illustrate it. Overheard someone describe something disturbing? Here's a fully rendered version of that, apparently.</p>
+<p>My partner can watch the news and process it entirely as information. They understand it, they feel appropriately about it, and then they don't see it. I used to think this meant they were somehow less affected by things. I now think it means they have a form of natural psychological buffer that I completely lack.</p>
+<h3>The 2am situation</h3>
+<p>Going to sleep requires the imagery to slow down, and it… doesn't, especially, do that on its own. It tends to keep producing content - memories, hypothetical scenarios, elaborate environments I've definitely never been to - until it eventually tips over into actual dreaming, which is its own entirely separate high-definition production.</p>
+<p>Things that help, for what it's worth: keeping the room properly dark, doing something genuinely boring before bed rather than anything remotely stimulating, and putting something audio in the foreground so my attention has somewhere specific to land. Podcasts about fairly mundane topics work well. Anything narrative or too interesting is counterproductive - I'll just start generating imagery to go with it.</p>
+<h3>The part where I admit it's also kind of brilliant</h3>
+<p>All of this is real and I'm not exaggerating it for effect. And yet - honestly? I don't think I'd swap it. The same system that produces unwanted 2am reconstructions is also the reason music feels almost physically immersive, the reason I lose hours in books, the reason creative work feels like discovery rather than effort. The costs are genuine. So are the things that come with it. I'm still figuring out the ratio, if I'm being honest.</p>
+</div>`
+  },
+  {
+    id:2,
+    title:"We Read the Same Book. We Had Completely Different Experiences.",
+    emoji:"📚",bg:"linear-gradient(135deg,#0d1a0d,#1a0d2a)",
+    tag:"Comparison",tagType:"tag-teal",
+    author:"JD",authorEmoji:"🌊",authorType:"Hyperphantasia",
+    date:"March 2025",readTime:"6 min read",
+    excerpt:"Same book, bought the same day, read at roughly the same pace. Then we compared notes. It was like we'd read entirely different things.",
+    body:`<div class="prose">
+<p>We did an experiment - same novel, bought at the same time, read at roughly the same speed, notes kept after each chapter. I wanted to actually understand what reading was like for someone with aphantasia, rather than just sort of vaguely theorising about it. I was expecting some differences. I was not expecting the scale of them.</p>
+<h3>What reading is like for me</h3>
+<p>Reading this book was like watching a film with very specific production design that I had no control over. The protagonist's flat rendered itself automatically - I didn't choose to visualise it, it just appeared, fully formed, the moment it was described. I can tell you which window faces which direction. I know how the light falls in the afternoon. I know what the desk looks like, which I find slightly unhinged given that it's a fictional desk in a book I read once.</p>
+<p>When two characters walk through a market scene, I'm in the market. I can hear the implied noise of it. I'm not reading about a place, I'm in a place that's running the stage directions as I go.</p>
+<h3>What reading is like for my partner</h3>
+<p>They described it as reading a very well-structured screenplay. Full narrative clarity, strong engagement with the characters, genuine emotional investment in what happens - but no pictures attached to any of it. The market scene registers as "a busy market" - a piece of information about the story, not somewhere they go.</p>
+<blockquote>"It's not that I'm missing something," they said. "It's more that I'm engaging with the actual text, rather than translating it into something else first."</blockquote>
+<p>That reframe genuinely stopped me. I'd been assuming my version was more immersive, therefore better. But there's a reasonable argument that I'm one step removed from what the author actually wrote - I'm consuming a visual interpretation of the text that my brain generates in real time. They're reading the text. Neither is wrong, but they're not the same thing.</p>
+<h3>Who got more out of it?</h3>
+<p>Different things, honestly. I had a richer sensory experience of the world in the book. They had sharper recall of the actual content - they could tell me thematic throughlines, remembered dialogue more accurately, and (I'm still a bit annoyed about this) spotted the twist three chapters before I did. I was too busy watching the scenery to notice the thing the author was clearly building towards. Great.</p>
+<p>There's no correct way to read a book. But I did not expect to learn that I've apparently been doing it in a way that has genuine trade-offs.</p>
+</div>`
+  },
+  {
+    id:3,
+    title:"Things I Casually Assumed Everyone Could Do",
+    emoji:"💡",bg:"linear-gradient(135deg,#1a1000,#2a1a00)",
+    tag:"My Experience",tagType:"tag-violet",
+    author:"JD",authorEmoji:"🌊",authorType:"Hyperphantasia",
+    date:"April 2025",readTime:"5 min read",
+    excerpt:"An ongoing and mildly embarrassing list of things I thought were universal human abilities. Turns out: not even slightly.",
+    body:`<div class="prose">
+<p>Since working out that I have hyperphantasia I've been doing a slow audit of my assumptions - essentially going back through various things I've always done or experienced and asking "wait, is this actually normal?" The answer is frequently no, and my partner finds each new discovery somewhere between interesting and baffling.</p>
+<p>This is the current list. I'll probably keep adding to it.</p>
+<h3>1. Replaying memories like footage</h3>
+<p>When I remember something that actually mattered - a conversation, a place, a specific moment - I don't just recall that it happened. I watch it. Not a perfect recording, memories don't work like that, but visually, spatially, with something close to the original sensory texture of being there. I thought "I remember it like it was yesterday" was a universal experience. It is not.</p>
+<h3>2. Pre-visualising conversations before they happen</h3>
+<p>Before any conversation I'm anxious about, I've usually already watched it play out several times in my head. Different versions, different responses, different outcomes. I assumed this was just what "preparing for a difficult conversation" meant. It isn't - my partner thinks about what they want to say. I watch a rehearsal. When I explained this, they stared at me for a moment and then said: "So you make yourself nervous about the thing, and then watch it happen, and then get nervous about that too?" Which is… accurate, yeah.</p>
+<h3>3. Seeing music</h3>
+<p>Certain music produces colour and movement and sometimes whole environments in my head without my choosing it. I assumed this was just what listening to music felt like. Some of it might technically be synesthesia - I genuinely don't know where hyperphantasia ends and that begins - but a lot of it seems to just be the brain illustrating things because it can and nobody asked it to stop.</p>
+<h3>4. Furniture arrangement without moving anything</h3>
+<p>I can rearrange a room in my head with what feels like complete spatial accuracy before touching a single piece of furniture. I have never moved something to a spot where it didn't fit, because I've already placed it visually and can see the problem. My partner has to physically try it, or use the IKEA app like a normal person.</p>
+<h3>5. Making myself feel things on purpose</h3>
+<p>I can make myself cry by choosing to imagine something sad in enough detail. The emotional response follows the imagery as directly as if it were actually happening. When I mentioned this to my partner they looked at me like I'd said something deeply strange, which I suppose it is if your brain doesn't work this way. "You're sad about something that isn't happening?" Yes. Quite often, actually.</p>
+<h3>6. Picturing faces from memory with enough detail to notice their expression</h3>
+<p>I can recall the faces of people I know clearly enough that I can remember, in a specific memory, what their exact expression was at a particular moment. My partner knows what people look like in person but the image isn't there to retrieve when they're not around. When I told them I could do this right now, with someone we both know, they asked me to prove it and then found the result unsettling. So. Not universal, apparently.</p>
+</div>`
+  },
+  {
+    id:4,
+    title:"What Watching a Film Together Actually Means When Your Brains Work Differently",
+    emoji:"🎬",bg:"linear-gradient(135deg,#0a001a,#001a1a)",
+    tag:"Comparison",tagType:"tag-teal",
+    author:"JD",authorEmoji:"🌊",authorType:"Hyperphantasia",
+    date:"May 2025",readTime:"5 min read",
+    excerpt:"We watch the same screen. What happens afterwards - in terms of memory, sleep, and whether I need to emotionally recover - is not the same at all.",
+    body:`<div class="prose">
+<p>We watch a lot of films together. It's a normal couple thing, it's always felt like a shared activity, and for a long time I assumed we were having roughly the same experience. Then I started asking questions.</p>
+<h3>During the film - mostly the same, with an asterisk</h3>
+<p>This bit is actually fairly equal. We're both watching the screen, following the story, having reactions. The film provides the visuals externally so it levels things out in a way that reading doesn't - my partner isn't at a disadvantage when the images are right there in front of both of us.</p>
+<p>Except - and this is subtle - I'm doing additional work that I don't think my partner is doing. When there's an off-screen sound, I generate an image of what's producing it. When a character references something from their past, I see it, even though it's not on screen. The film gives me a visual floor and my brain builds above it automatically, without being asked.</p>
+<h3>After the film - not the same at all</h3>
+<p>A film I've watched stays with me visually in a way that doesn't stop when the credits roll. Not just as "a memory of having seen it" - as an actual set of images that come back, unbidden, with something close to their original quality. A genuinely beautiful shot will replay itself behind my eyes for days. Something disturbing will do the same, considerably less pleasantly.</p>
+<blockquote>My partner watched the same film, went to sleep without incident, and thought about it on and off in a normal, proportionate way over the following week. I thought about it at high resolution for about a fortnight.</blockquote>
+<h3>The horror film situation</h3>
+<p>We've mostly stopped watching horror films together, not because my partner is particularly squeamish - they're not - but because the experience is just wildly different for me in a way that doesn't feel worth it. They watch something frightening, feel appropriately unsettled, sleep fine, move on with their life. I watch the same thing and then have it available for involuntary replay at 3am for an indefinite period. The images go into the library and they don't really leave.</p>
+<p>This isn't a complaint about horror films specifically. It's just a description of what it's actually like to have an imagination that files everything visually and retrieves it without asking whether you wanted it.</p>
+<h3>The part that's actually brilliant</h3>
+<p>A film I genuinely love, though - that's a different thing entirely. The good ones stay with me as visual memories that feel almost like places I've been. I've replayed specific shots from films I love more times than I could count, purely in my head, with no screen involved. Whether that's wonderful or slightly unhinged probably depends on your perspective. I've decided it's wonderful.</p>
+</div>`
+  },
+  {
+    id:5,
+    title:"Why I Made This - And What I'd Like You To Do Next",
+    emoji:"👁",bg:"linear-gradient(135deg,#0d0d1a,#1a0d2a)",
+    tag:"About",tagType:"tag-amber",
+    author:"JD",authorEmoji:"🌊",authorType:"Hyperphantasia",
+    date:"June 2025",readTime:"4 min read",
+    excerpt:"There are decent resources on aphantasia. Almost nothing useful on hyperphantasia. And nothing that treats both as parts of the same story. So.",
+    body:`<div class="prose">
+<p>When my partner and I worked out that we were sitting at opposite ends of the imagination spectrum, we went looking for somewhere to actually read about it. The aphantasia side was reasonably covered - there's a proper network, accessible research, a community of people who've been comparing notes for a while. The hyperphantasia side was almost completely absent from anything free and useful, or worse, had been colonised by landing pages selling you a paid assessment report to tell you things you could have found in two minutes of reading.</p>
+<p>And neither side had anything that treated the two experiences as connected - as different expressions of the same underlying thing, equally worth understanding.</p>
+<p>So I made this. I am not a neuroscientist. I'm someone who found out how their brain works as an adult, found the existing resources either hard to navigate or behind a paywall, and thought: I can just… put it all in one place. Free. Readable. With a test that gives you the actual result rather than asking for your card details first.</p>
+<h3>What this is trying to be</h3>
+<p>Useful, mostly. And honest about what I don't know, which is quite a lot - I'm figuring this out alongside everyone else who stumbles onto this site after asking their partner to picture an apple and getting a very unexpected answer.</p>
+<blockquote>The moment of finding out where you sit on this spectrum has a specific quality to it - a kind of retrospective click, where a load of small unexplained things about yourself suddenly make sense all at once. I want this to be the place where that click happens for people.</blockquote>
+<p>The blog is my experience specifically - hyperphantasia, from the inside, with references to my partner's aphantasia for contrast because that's genuinely been the most useful frame for understanding both. I write it the way I'd explain it to a friend, which means it's occasionally slightly chaotic and I reserve the right to go on tangents.</p>
+<h3>What I'd like you to do</h3>
+<p>Take the test, if you haven't. It's free, it actually tells you something, and it takes five minutes. Then send it to someone - specifically the person in your life who'd be most surprised by their result. The apple question is one of the most interesting things you can casually drop into a conversation, and the range of answers people give is genuinely startling once you know what you're listening for.</p>
+<p>Everything on this site is free. That's not going to change.</p>
+</div>`
+  }
+];
+
+function buildBlog(){
+  const grid=document.getElementById('blogGrid');
+  grid.innerHTML='';
+  posts.forEach((p,i)=>{
+    const card=document.createElement('div');
+    card.className='blog-card';
+    card.onclick=()=>{ location.href='blog/'+POST_SLUGS[i]+'.html'; };
+    card.style.cursor='pointer';
+    card.innerHTML=`
+      <div class="blog-card-header" style="background:${p.bg}">
+        <span style="font-size:3.5rem">${p.emoji}</span>
+      </div>
+      <div class="blog-card-body">
+        <span class="tag ${p.tagType}">${p.tag}</span>
+        <h3>${p.title}</h3>
+        <p>${p.excerpt}</p>
+        <div class="blog-card-meta">
+          <span>${p.authorEmoji} ${p.author}</span>
+          <span class="dot"></span>
+          <span>${p.date}</span>
+          <span class="dot"></span>
+          <span>${p.readTime}</span>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+function openPost(i){
+  const p=posts[i];
+  const postEl=document.getElementById('blogPost');
+  document.getElementById('blogList').style.display='none';
+  postEl.classList.add('active');
+  postEl.innerHTML=`
+    <div class="post-header">
+      <div class="orb" style="width:400px;height:400px;top:-100px;right:-50px;background:rgba(22,163,74,.2)"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div class="post-back" onclick="backToBlog()">← Back to blog</div>
+        <span class="tag ${p.tagType}" style="margin-bottom:1rem;display:inline-block">${p.tag}</span>
+        <h1 class="post-title">${p.emoji} ${p.title}</h1>
+        <div class="post-meta">
+          <span>${p.authorEmoji} ${p.author} · ${p.authorType}</span>
+          <span>·</span>
+          <span>${p.date}</span>
+          <span>·</span>
+          <span>${p.readTime}</span>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="post-body">
+        ${p.body}
+        <div class="post-cta">
+          <h3>Where do you land?</h3>
+          <p>If this resonated - or confused you - the free test will tell you exactly where you sit on the spectrum.</p>
+          <button class="btn btn-primary" onclick="location.href='test.html'">Take the free test →</button>
+        </div>
+      </div>
+    </div>
+  `;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function backToBlog(){
+  document.getElementById('blogList').style.display='block';
+  document.getElementById('blogPost').classList.remove('active');
+  document.getElementById('blogPost').innerHTML='';
+}
+buildBlog();
+buildBlog();
+</script>
+
+<!-- Netlify Forms - static declarations for deploy-time detection -->
+<form name="newsletter" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="newsletter">
+  <input name="email">
+</form>
+<form name="gallery" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="gallery">
+  <input name="type"><input name="text"><input name="name">
+  <input name="country"><input name="email"><input name="prompt">
+</form>
+</body>
+</html>
+
+
+
+
+

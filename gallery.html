@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <title>What Others See - Community Gallery | The Phantasia Project</title>
+  <meta name="description" content="Read how people across the imagination spectrum - from aphantasia to hyperphantasia - describe the same experience from completely different minds. Add your own.">
+  <meta name="keywords" content="aphantasia experiences, hyperphantasia experiences, imagination spectrum gallery, what does aphantasia feel like, mental imagery descriptions">
+  <link rel="canonical" href="https://thephantasiaproject.com/gallery">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#080812">
+  <meta name="author" content="JD - The Phantasia Project">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thephantasiaproject.com/gallery">
+  <meta property="og:title" content="What Others See - Community Gallery | The Phantasia Project">
+  <meta property="og:description" content="Read how people across the imagination spectrum - from aphantasia to hyperphantasia - describe the same experience from completely different minds. Add your own.">
+  <meta property="og:site_name" content="The Phantasia Project">
+  <meta property="og:image" content="https://thephantasiaproject.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@phantasiaproject">
+  <meta name="twitter:title" content="What Others See - Community Gallery | The Phantasia Project">
+  <meta name="twitter:description" content="Read how people across the imagination spectrum - from aphantasia to hyperphantasia - describe the same experience from completely different minds. Add your own.">
+  <meta name="twitter:image" content="https://thephantasiaproject.com/og-image.png">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "What Others See - Imagination Spectrum Community Gallery",
+  "description": "Community-submitted descriptions of mental imagery across the full spectrum - from aphantasia to hyperphantasia.",
+  "url": "https://thephantasiaproject.com/gallery",
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Phantasia Project",
+    "url": "https://thephantasiaproject.com"
+  }
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="noise-overlay"></div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html" style="text-decoration:none;color:inherit">
+    <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+  </a>
+  <div class="nav-links">
+    <a href="learn.html">Imagination Spectrum</a>
+    <a href="research.html">Research</a>
+    <a href="projlab.html">Projection Lab</a>
+    <a href="gallery.html">Perspectives</a>
+    <a href="videos.html">Videos</a>
+    <button class="nav-cta" onclick="location.href='test.html'">Take the Test →</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="learn.html" onclick="toggleMobile()">Imagination Spectrum</a>
+  <a href="research.html" onclick="toggleMobile()">Research</a>
+  <a href="projlab.html" onclick="toggleMobile()">Projection Lab</a>
+  <a href="gallery.html" onclick="toggleMobile()">Perspectives</a>
+  <a href="videos.html" onclick="toggleMobile()">Videos</a>
+  <a href="test.html" onclick="toggleMobile()" style="color:var(--violet-light)">Take the Test →</a>
+</div>
+
+<div id="gallery">
+  <div class="gallery-hero">
+    <div class="orb" style="width:500px;height:500px;top:-150px;left:-100px;background:rgba(22,163,74,.1)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div class="section-label">Community</div>
+      <h1>What Others See</h1>
+      <p>Three prompts. One spectrum. Read how people across the range describe the same experience from completely different minds - then add your own.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:2rem">
+
+    <div class="gallery-tabs">
+      <button class="gallery-tab active" onclick="switchGalleryPrompt('apple',this)">
+        <span class="gallery-tab-num">01</span>
+        <span class="gallery-tab-title">The Apple</span>
+        <span class="gallery-tab-desc">Controlled comparison</span>
+      </button>
+      <button class="gallery-tab" onclick="switchGalleryPrompt('experience',this)">
+        <span class="gallery-tab-num">02</span>
+        <span class="gallery-tab-title">Inner World</span>
+        <span class="gallery-tab-desc">In your own words</span>
+      </button>
+      <button class="gallery-tab" onclick="switchGalleryPrompt('quirks',this)">
+        <span class="gallery-tab-num">03</span>
+        <span class="gallery-tab-title">Quirks &amp; Insights</span>
+        <span class="gallery-tab-desc">Free for all</span>
+      </button>
+    </div>
+
+    <div class="gallery-prompt-banner">
+      <span id="galleryPromptBanner">Close your eyes. Picture an apple. Describe exactly what happens.</span>
+    </div>
+
+    <div class="gallery-toolbar">
+      <div class="gallery-filters" id="galleryFilters"></div>
+      <div class="gallery-count" id="galleryCount"></div>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+
+    <form class="gallery-submit" id="gallerySubmitWrap" name="gallery" method="POST" data-netlify="true" onsubmit="handleGallerySubmit(event)">
+      <input type="hidden" name="form-name" value="gallery">
+      <h2>Add your experience</h2>
+      <p>Entries are reviewed before going live - usually within 48 hours. Your email is private and only used to notify you when yours appears.</p>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;font-size:.875rem;font-style:italic;color:var(--text);margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:.6rem">
+        <span style="color:var(--violet-light);font-style:normal;font-size:1.2rem;flex-shrink:0;margin-top:-.1rem">❝</span>
+        <span id="galleryFormPrompt">Close your eyes. Picture an apple. Describe exactly what happens.</span>
+      </div>
+      <p style="font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Your result type</p>
+      <div class="gallery-type-select" id="galleryTypeSelect">
+        <button class="gallery-type-btn" data-type="Aphantasia" data-color="#f43f5e" onclick="selectGalleryType(this)" style="border-color:rgba(244,63,94,.3)">⬛ Aphantasia</button>
+        <button class="gallery-type-btn" data-type="Low Phantasia" data-color="#F59E0B" onclick="selectGalleryType(this)" style="border-color:rgba(245,158,11,.3)">🌑 Low Phantasia</button>
+        <button class="gallery-type-btn" data-type="Phantasia" data-color="#4ade80" onclick="selectGalleryType(this)" style="border-color:rgba(74,222,128,.3)">🌗 Phantasia</button>
+        <button class="gallery-type-btn" data-type="Vivid Phantasia" data-color="#06B6D4" onclick="selectGalleryType(this)" style="border-color:rgba(6,182,212,.3)">🌕 Vivid Phantasia</button>
+        <button class="gallery-type-btn" data-type="Hyperphantasia" data-color="#10f2c8" onclick="selectGalleryType(this)" style="border-color:rgba(16,242,200,.3)">⭐ Hyperphantasia</button>
+      </div>
+      <div class="gallery-textarea-wrap">
+        <textarea class="gallery-textarea" id="galleryText" name="text" placeholder="Describe what happens when you picture the apple..." maxlength="200" oninput="updateGalleryChar()" rows="4"></textarea>
+      </div>
+      <div class="gallery-char-counter" id="galleryCharCount">0 / 200</div>
+      <div id="galleryHint" style="font-size:.78rem;color:var(--muted);margin-bottom:1rem;margin-top:-.3rem">Keep it to one moment - what actually happens when you try.</div>
+      <div class="gallery-fields-row">
+        <input class="gallery-input" id="galleryName" name="name" type="text" placeholder="First name (e.g. Alex)" maxlength="30">
+        <input class="gallery-input" id="galleryCountry" name="country" type="text" placeholder="Country (optional)" maxlength="30">
+      </div>
+      <input class="gallery-input" id="galleryEmail" name="email" type="email" placeholder="Email - private, only used to notify you when your entry goes live" style="width:100%;margin-bottom:1.25rem">
+      <div class="gallery-submit-row">
+        <div class="gallery-privacy">🔒 Your email is never shown publicly.<br>Entries are reviewed before appearing.</div>
+        <button class="btn btn-primary" type="submit">Submit entry →</button>
+      </div>
+      <div class="gallery-pending" id="galleryPending">
+        <h3>✦ Submitted - thank you</h3>
+        <p>Your experience is in the queue. Entries are reviewed before going live - usually within 48 hours. We'll email you when yours appears.</p>
+      </div>
+    </form>
+    <div class="gallery-removal">Want an entry removed? <a href="mailto:hello@mindseye.info?subject=Entry removal request">Email us</a> and we'll take it down within 24 hours.</div>
+  </div>
+
+</div>
+<!-- ============================== NEWSLETTER (persistent) ============================== -->
+<section class="newsletter-section">
+  <div class="orb"></div>
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="section-label">Stay in the loop</div>
+      <h2>New posts and videos,<br>straight to your inbox</h2>
+      <p>No noise � just new updates, video drops, and the occasional piece of research worth knowing about. Free, obviously. Unsubscribe any time.</p>
+      <div id="newsletterWrap">
+        <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="hidden" name="form-name" value="newsletter">
+          <input class="newsletter-input" type="email" name="email" id="newsletterEmail" placeholder="your@email.com" autocomplete="email" required>
+          <button class="newsletter-btn" type="submit">Subscribe →</button>
+        </form>
+        <p class="newsletter-privacy">🔒 No spam. No selling your data. Just the good stuff.</p>
+      </div>
+      <div class="newsletter-success" id="newsletterSuccess">
+        <h3>👁 You're in.</h3>
+        <p>Thanks for subscribing. You'll hear from us when there's something worth reading - which is not every day, we promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (persistent) ============================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html" style="text-decoration:none;color:inherit">
+          <img src="PhantasiaZoom.png" alt="The Phantasia Project logo" class="brand-mark"> The Phantasia Project
+        </a>
+        <p>A free, open information hub for the full imagination spectrum - from aphantasia to hyperphantasia.</p>
+        <div class="footer-social">
+          <!-- TikTok -->
+          <a class="social-link" href="https://tiktok.com/@mindseye" target="_blank" rel="noopener" title="TikTok">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.16 8.16 0 004.78 1.53V6.82a4.85 4.85 0 01-1.01-.13z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a class="social-link" href="https://instagram.com/mindseye" target="_blank" rel="noopener" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a class="social-link" href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener" title="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="learn.html">Imagination Spectrum</a></li>
+          <li><a href="projlab.html">Projection Lab</a></li>
+          <li><a href="gallery.html">Perspectives</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="learn.html">A–Z Glossary</a></li>
+          <li><a href="whatnow.html">What Now?</a></li>
+          <li><a href="test.html">Take the Test</a></li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div class="footer-col">
+        <h4>Content</h4>
+        <ul class="footer-links">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="https://tiktok.com/@mindseye" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://instagram.com/mindseye" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@thephantasiaproject" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p>Questions, research suggestions, or your own story to share? Get in touch.</p>
+        <a class="footer-email" href="mailto:hello@mindseye.info">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          hello@mindseye.info
+        </a>
+        <p style="margin-top:1rem">Or find us on socials - we read every message.</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 The Phantasia Project. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="learn.html">A–Z</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="shared.js"></script>
+<script>
+const GALLERY_PROMPTS={
+  apple:{
+    key:'apple',
+    banner:'Close your eyes. Picture an apple. Describe exactly what happens.',
+    hint:'Keep it to one moment - what actually happens when you try.',
+    maxChars:200,
+    placeholder:'Describe what happens when you picture the apple...',
+  },
+  experience:{
+    key:'experience',
+    banner:'Describe your inner experience in as much detail as you like.',
+    hint:'The richer the better - take all 600 characters if you need them.',
+    maxChars:600,
+    placeholder:"What does it feel like inside your head? Original content, recurring visions, the internal radio - whatever's most vivid.",
+  },
+  quirks:{
+    key:'quirks',
+    banner:'Share a quirk, insight, or way your imagery affects your daily life.',
+    hint:'Could be funny, surprising, or something you only just figured out.',
+    maxChars:300,
+    placeholder:'A specific moment, habit, or realisation - free-form...',
+  },
+};
+
+const GALLERY_DATA={
+  apple:[
+    {id:1,featured:true,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Tom',country:'UK',flag:'🇬🇧',age:'2 days ago',
+      text:"Nothing. Not darkness - nothing at all. I know it's an apple. I know everything about it. But looking for a picture is like looking for a sound. I'm 34 and only found this out last week."},
+    {id:2,featured:true,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Priya',country:'India',flag:'🇮🇳',age:'5 days ago',
+      text:"The word apple. That's genuinely it. I didn't know that wasn't how everyone worked until someone asked what I see and I said nothing. The silence after that was interesting."},
+    {id:3,featured:false,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Marcus',country:'US',flag:'🇺🇸',age:'1 week ago',
+      text:"A total, confident blankness. The apple is completely real to me - I know its colour, weight, smell - and entirely absent from my vision. It's not darkness. It's just not visual."},
+    {id:4,featured:false,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Sarah',country:'Australia',flag:'🇦🇺',age:'2 weeks ago',
+      text:"I reach for it and find the idea. Red, round, stem. Trying to see it is like trying to hear a colour. I've been doing this my whole life without knowing it was unusual."},
+    {id:5,featured:true,type:'Low Phantasia',typeKey:'low',color:'#F59E0B',name:'Emma',country:'Germany',flag:'🇩🇪',age:'3 days ago',
+      text:"Something reddish for half a second before it dissolves. Like trying to hold smoke. I used to think when people said they could picture things, they were being poetic."},
+    {id:6,featured:false,type:'Low Phantasia',typeKey:'low',color:'#F59E0B',name:'James',country:'Canada',flag:'🇨🇦',age:'1 week ago',
+      text:"A dim impression of round and red that fades before I can look at it properly. I have to keep rebuilding it to hold it present, and even then it's more suggestion than image."},
+    {id:7,featured:true,type:'Phantasia',typeKey:'mid',color:'#4ade80',name:'Léa',country:'France',flag:'🇫🇷',age:'4 days ago',
+      text:"A decent apple. Red, round, sitting on a surface. It shifts if I don't concentrate, but it's clearly there. I assumed everyone had more than this until I took the test."},
+    {id:8,featured:false,type:'Phantasia',typeKey:'mid',color:'#4ade80',name:'Amir',country:'Sweden',flag:'🇸🇪',age:'6 days ago',
+      text:"More like a memory of an apple than the apple itself. Clear enough to describe, not clear enough to paint. Stable enough to examine; not stable enough to trust completely."},
+    {id:9,featured:false,type:'Phantasia',typeKey:'mid',color:'#4ade80',name:'Chiara',country:'Italy',flag:'🇮🇹',age:'2 weeks ago',
+      text:"Impressionistic. The shape is right, the colour approximate, the surface suggested. Useful for thinking with. I wouldn't call it seeing, exactly, but it's not nothing either."},
+    {id:10,featured:true,type:'Vivid Phantasia',typeKey:'vivid',color:'#06B6D4',name:'Dan',country:'New Zealand',flag:'🇳🇿',age:'3 days ago',
+      text:"A clear, stable red apple. I can rotate it slowly. The skin has texture. More like a very good photograph than a real object - sharp enough to examine, present enough to trust."},
+    {id:11,featured:false,type:'Vivid Phantasia',typeKey:'vivid',color:'#06B6D4',name:'Yuki',country:'Japan',flag:'🇯🇵',age:'8 days ago',
+      text:"Vivid enough that I could paint it from memory after. I notice the light source, the small imperfections in the skin. It holds steady without effort. I didn't know this was unusual."},
+    {id:12,featured:false,type:'Vivid Phantasia',typeKey:'vivid',color:'#06B6D4',name:'Sofia',country:'Brazil',flag:'🇧🇷',age:'3 weeks ago',
+      text:"Clear red, good stem, three dimensional. I can look at it from different angles. Not quite real, but more than a sketch - somewhere between a diagram and a photograph."},
+    {id:13,featured:true,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'JD',country:'UK',flag:'🇬🇧',age:'1 day ago',
+      text:"A specific apple. Red with a yellow patch near the base, slightly waxy, afternoon light from the left. I didn't choose those details. They arrived on their own before I finished the question."},
+    {id:14,featured:true,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'Hugo',country:'France',flag:'🇫🇷',age:'2 days ago',
+      text:"Photorealistic. Cold if I reach for it. There's a consistent light source I didn't set. A specific smell I didn't ask for. I forget it's not real for a second, then remember."},
+    {id:15,featured:false,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'Olivia',country:'US',flag:'🇺🇸',age:'1 week ago',
+      text:"Mine is always the same apple - a Braeburn, slightly past ripe, with a small bruise near the stem I definitely invented. I've been picturing it for twenty years without knowing that was odd."},
+    {id:16,featured:false,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'Lena',country:'Germany',flag:'🇩🇪',age:'2 weeks ago',
+      text:"It's there before I finish closing my eyes. Glossy, cold, shadow in the right place. My brain doesn't wait to be invited. It's been doing this my entire life and I assumed it was standard."},
+  ],
+
+  experience:[
+    {id:17,featured:true,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'JD',country:'UK',flag:'🇬🇧',age:'1 day ago',
+      text:"My brain produces what I'd call original programming. Without forcing it, I'll find myself watching a cartoon with its own visual style and narrative logic, or touring a Mario Kart map that doesn't exist - with real elevation, shortcuts, specific lighting in each section. I can nudge it toward themes but if I try to control it too much the whole thing collapses back to regular visuals. There's also an internal radio: I can call up any song I know in something close to full quality, with the right texture and timing. Sometimes in certain states everything gets sharper. Friends describe swirls and fractals. Mine are fully animated original productions."},
+    {id:18,featured:true,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Rebecca',country:'UK',flag:'🇬🇧',age:'3 days ago',
+      text:"When someone describes a scene I build a verbal-spatial model - I know where everything is, I can navigate it, but there's no picture attached. I'm a surgeon. People assume aphantasia makes procedural work harder. I don't think it does. I operate from spatial knowledge and procedural memory rather than mental imagery, and it turns out these are genuinely different systems. I've never visualised a procedure before performing it. I do something else instead - a kind of confident, non-visual knowing of how things are arranged - that I didn't have a name for until recently."},
+    {id:19,featured:true,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'Olivia',country:'US',flag:'🇺🇸',age:'1 week ago',
+      text:"When I'm working through a problem I watch myself do it - a version of me, in the same room, going through the steps. I've rehearsed difficult conversations so vividly that when they actually happen I sometimes mistake the rehearsal for the memory afterwards. I once apologised to someone for something I had only imagined saying. The exchange had gone badly in my head and apparently I felt genuine guilt about the version of it that never happened."},
+    {id:20,featured:true,type:'Vivid Phantasia',typeKey:'vivid',color:'#06B6D4',name:'Marco',country:'Italy',flag:'🇮🇹',age:'4 days ago',
+      text:"I design interiors mentally before touching anything. I walk through rooms that haven't been built yet, notice where the light falls wrong, fix it, try alternatives. At work people describe me as decisive. Really I've already lived in the space twenty times before the meeting. The final built version is usually very close to what I first walked through in my head, which still surprises me even though it happens every time."},
+    {id:21,featured:false,type:'Phantasia',typeKey:'mid',color:'#4ade80',name:'Nadia',country:'Canada',flag:'🇨🇦',age:'5 days ago',
+      text:"Reading is like following a stage play - I know the set, the blocking, what everything looks like in principle, but it's impressionistic rather than rendered. I fill in gaps deliberately rather than automatically. When film adaptations change details I've mentally settled on, I notice immediately and it bothers me more than it probably should. I'm aware I've made decisions about what these worlds look like; I just can't fully see them."},
+    {id:22,featured:false,type:'Low Phantasia',typeKey:'low',color:'#F59E0B',name:'Felix',country:'Germany',flag:'🇩🇪',age:'8 days ago',
+      text:"Music sometimes produces a faint wash of colour - not shapes or scenes, just a mood translated into something almost-visual. It's gone if I look for it directly. More of a peripheral impression than an image, and completely involuntary. I assumed this was standard until I started reading about imagery vividness and realised it might actually be at the upper limit of what I can do."},
+    {id:23,featured:false,type:'Vivid Phantasia',typeKey:'vivid',color:'#06B6D4',name:'Yuki',country:'Japan',flag:'🇯🇵',age:'1 week ago',
+      text:"Every night before sleep I continue a story I've been running since I was about eight. The same narrative, picking up where I left off, with consistent characters and accumulated history. I've never written it down because I'm afraid transcription would fix it in a way that ruins the experience of just watching it happen. The story is now approximately twelve years old. I have no idea how it ends and I don't want to."},
+    {id:24,featured:false,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Carlos',country:'Spain',flag:'🇪🇸',age:'2 weeks ago',
+      text:"I've been to Paris twice. I know exactly what it looks like - I have the photographs, the facts, the specific feeling of cold air and noise. But I cannot picture a single street or building right now. My memories are entirely propositional. I know that things happened and what they were like; I just cannot watch any of them. It took a long time to understand that this was a meaningful difference and not just poor attention."},
+  ],
+
+  quirks:[
+    {id:25,featured:true,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Tom',country:'UK',flag:'🇬🇧',age:'2 days ago',
+      text:"I cannot picture the face of anyone I love when they're not with me. I know them completely in person. Close my eyes and there's nothing - no face, no expression. Just the feeling of knowing them. I found this out when my daughter was born and I realised I couldn't see her face when she wasn't in the room."},
+    {id:26,featured:false,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Sarah',country:'Australia',flag:'🇦🇺',age:'4 days ago',
+      text:"Guided meditation. 'Picture yourself on a beach.' I am in a room. There is no beach. There is no warmth. There is no golden light. There is just me, sitting with my eyes shut, being told to imagine something that will not appear, waiting for it to be over."},
+    {id:27,featured:true,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'Hugo',country:'France',flag:'🇫🇷',age:'3 days ago',
+      text:"Music doesn't just sound like music to me. Specific chords produce specific colours, and some pieces are basically films I'm watching whether I want to be or not. Beethoven's 7th is dark green and gold moving horizontally. I've tried to explain this to people and stopped, because the look they give you is a specific kind of look."},
+    {id:28,featured:false,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'Lena',country:'Germany',flag:'🇩🇪',age:'5 days ago',
+      text:"I'm still inside films an hour after they finish. Not thinking about them - inside them. My partner was halfway through a different conversation before I realised I was still in a completely different century. Horror films stay for weeks. I've stopped watching them entirely."},
+    {id:29,featured:false,type:'Low Phantasia',typeKey:'low',color:'#F59E0B',name:'James',country:'Canada',flag:'🇨🇦',age:'1 week ago',
+      text:"I resented descriptive passages in fantasy novels my whole life. Too slow, too much, felt like self-indulgence. Found out recently I was getting essentially nothing visual from them - just waiting for the plot to resume. The description was doing nothing for me because there was nothing to project it onto."},
+    {id:30,featured:true,type:'Vivid Phantasia',typeKey:'vivid',color:'#06B6D4',name:'Dan',country:'New Zealand',flag:'🇳🇿',age:'6 days ago',
+      text:"I redesign every room I walk into, automatically, without choosing to. I'll be at a dinner party and quietly watching my preferred version of their living room instead of listening. I've started telling people I'm an interior designer. It's not technically true but it's the most efficient explanation."},
+    {id:31,featured:false,type:'Phantasia',typeKey:'mid',color:'#4ade80',name:'Amir',country:'Sweden',flag:'🇸🇪',age:'1 week ago',
+      text:"I can imagine music playing clearly in my head - melody, timing, the specific texture of particular instruments - but cannot picture the musicians playing it. Pure sound with no visual scene attached. This makes concerts quite strange; I keep wanting to close my eyes."},
+    {id:32,featured:false,type:'Vivid Phantasia',typeKey:'vivid',color:'#06B6D4',name:'Chiara',country:'Italy',flag:'🇮🇹',age:'2 weeks ago',
+      text:"My dreams are cinematically detailed enough that I journal them. Three short stories I've published came directly from what my sleeping brain produced. I feel like I have a writing collaborator I can't communicate with or direct, who sends me work in the night and bills me nothing."},
+    {id:33,featured:false,type:'Aphantasia',typeKey:'aph',color:'#f43f5e',name:'Marcus',country:'US',flag:'🇺🇸',age:'2 weeks ago',
+      text:"My memory works like a well-organised database. I can recall the facts of a holiday precisely - what we did, what it cost, what the food tasted like - but cannot play back a single moment of it visually. I know that things happened. I just can't watch them."},
+    {id:34,featured:true,type:'Hyperphantasia',typeKey:'hyper',color:'#10f2c8',name:'Olivia',country:'US',flag:'🇺🇸',age:'3 days ago',
+      text:"When people talk to me I sometimes see the words appearing as subtitles - not always, not on command, but occasionally a specific phrase will visually materialise as it's being spoken. I only recently found out this isn't a standard part of listening."},
+  ],
+};
+
+let activeGalleryPrompt='apple';
+let activeGalleryFilter='all';
+let currentMaxChars=200;
+let selectedGalleryType=null;
+
+const galleryFilterDefs=[
+  {key:'all',label:'All'},
+  {key:'aph',label:'⬛ Aphantasia'},
+  {key:'low',label:'🌑 Low'},
+  {key:'mid',label:'🌗 Phantasia'},
+  {key:'vivid',label:'🌕 Vivid'},
+  {key:'hyper',label:'⭐ Hyper'},
+];
+
+function buildGalleryFilters(){
+  const wrap=document.getElementById('galleryFilters');
+  if(!wrap)return;
+  wrap.innerHTML='';
+  galleryFilterDefs.forEach(f=>{
+    const btn=document.createElement('button');
+    btn.className='gallery-filter-btn'+(f.key==='all'?' active':'');
+    btn.textContent=f.label;
+    btn.dataset.key=f.key;
+    btn.onclick=()=>{
+      document.querySelectorAll('.gallery-filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      activeGalleryFilter=f.key;
+      renderGallery();
+    };
+    wrap.appendChild(btn);
+  });
+}
+
+function renderGallery(){
+  const grid=document.getElementById('galleryGrid');
+  const countEl=document.getElementById('galleryCount');
+  if(!grid)return;
+  const entries=GALLERY_DATA[activeGalleryPrompt]||[];
+  const filtered=activeGalleryFilter==='all'?entries:entries.filter(e=>e.typeKey===activeGalleryFilter);
+  const sorted=[...filtered.filter(e=>e.featured),...filtered.filter(e=>!e.featured)];
+  if(sorted.length===0){
+    grid.innerHTML=`<div class="gallery-empty">No entries yet for this filter. <span style="cursor:pointer;color:var(--violet-light)" onclick="document.getElementById('gallerySubmitWrap').scrollIntoView({behavior:'smooth'})">Be the first →</span></div>`;
+    if(countEl)countEl.textContent='0 entries';
+    return;
+  }
+  grid.innerHTML=sorted.map(e=>{
+    const bg=e.color+'12',border=e.color+'3a';
+    return`<div class="gallery-card${e.featured?' featured':''}" style="border-color:${border};${e.featured?'background:linear-gradient(135deg,'+e.color+'08,var(--card))':''}">
+      <div class="gallery-card-header">
+        <span style="background:${bg};color:${e.color};border:1px solid ${border};font-size:.72rem;font-weight:700;padding:.25rem .7rem;border-radius:999px;display:inline-block">${e.type}</span>
+        ${e.featured?'<span class="gallery-featured-badge">Featured</span>':''}
+      </div>
+      <p class="gallery-card-text">${e.text}</p>
+      <div class="gallery-card-meta">
+        <span class="name">${e.flag} ${e.name}${e.country?', '+e.country:''}</span>
+        <span>${e.age}</span>
+      </div>
+    </div>`;
+  }).join('');
+  if(countEl){const t=sorted.length;countEl.textContent=`${t} ${t===1?'entry':'entries'}${activeGalleryFilter!=='all'?' · filtered':''}`;}
+}
+
+function switchGalleryPrompt(key,btn){
+  activeGalleryPrompt=key;
+  activeGalleryFilter='all';
+  currentMaxChars=GALLERY_PROMPTS[key].maxChars;
+
+  document.querySelectorAll('.gallery-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-filter-btn').forEach((b,i)=>{b.classList.toggle('active',i===0);});
+
+  const banner=document.getElementById('galleryPromptBanner');
+  if(banner)banner.textContent=GALLERY_PROMPTS[key].banner;
+  const formPrompt=document.getElementById('galleryFormPrompt');
+  if(formPrompt)formPrompt.textContent=GALLERY_PROMPTS[key].banner;
+  const hint=document.getElementById('galleryHint');
+  if(hint)hint.textContent=GALLERY_PROMPTS[key].hint;
+
+  const ta=document.getElementById('galleryText');
+  if(ta){ta.maxLength=currentMaxChars;ta.placeholder=GALLERY_PROMPTS[key].placeholder;ta.value='';}
+  const counter=document.getElementById('galleryCharCount');
+  if(counter)counter.textContent=`0 / ${currentMaxChars}`;
+
+  // Reset type selection and pending state
+  selectedGalleryType=null;
+  document.querySelectorAll('.gallery-type-btn').forEach(b=>{
+    b.classList.remove('selected');b.style.background='var(--card)';b.style.color='var(--muted)';
+  });
+  document.getElementById('galleryPending').style.display='none';
+  document.querySelectorAll('#gallerySubmitWrap .gallery-type-select,#gallerySubmitWrap .gallery-textarea-wrap,#gallerySubmitWrap .gallery-char-counter,#gallerySubmitWrap .gallery-fields-row,#gallerySubmitWrap .gallery-input,#gallerySubmitWrap .gallery-submit-row').forEach(el=>el.style.display='');
+
+  renderGallery();
+}
+
+function selectGalleryType(btn){
+  document.querySelectorAll('.gallery-type-btn').forEach(b=>{
+    b.classList.remove('selected');b.style.background='var(--card)';b.style.color='var(--muted)';
+    b.style.borderColor='';
+  });
+  btn.classList.add('selected');
+  const c=btn.dataset.color;
+  btn.style.background=c+'22';btn.style.color=c;btn.style.borderColor=c+'66';
+  selectedGalleryType=btn.dataset.type;
+}
+
+function updateGalleryChar(){
+  const ta=document.getElementById('galleryText');
+  const counter=document.getElementById('galleryCharCount');
+  if(!ta||!counter)return;
+  const len=ta.value.length;
+  counter.textContent=`${len} / ${currentMaxChars}`;
+  counter.style.color=len>=currentMaxChars?'var(--rose)':len>=currentMaxChars*.8?'var(--amber)':'var(--muted)';
+}
+
+function handleGallerySubmit(e){
+  e.preventDefault();
+  const text=document.getElementById('galleryText').value.trim();
+  if(!selectedGalleryType){alert('Please select your result type first.');return;}
+  if(text.length<10){alert('Please write at least a sentence.');return;}
+  if(text.length>currentMaxChars){alert(`Please keep your entry under ${currentMaxChars} characters.`);return;}
+  // Hide fields, show pending
+  ['#gallerySubmitWrap .gallery-type-select','#gallerySubmitWrap .gallery-textarea-wrap',
+   '#gallerySubmitWrap .gallery-char-counter','#gallerySubmitWrap .gallery-fields-row',
+   '#gallerySubmitWrap .gallery-submit-row','#gallerySubmitWrap #galleryHint',
+   '#gallerySubmitWrap [style*="prompt"]'].forEach(sel=>{
+    const el=document.querySelector(sel);if(el)el.style.display='none';
+  });
+  document.getElementById('galleryPending').style.display='block';
+  fetch('/',{
+    method:'POST',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:new URLSearchParams({
+      'form-name':'gallery',
+      type:selectedGalleryType,
+      text,
+      name:document.getElementById('galleryName').value.trim()||'Anonymous',
+      country:document.getElementById('galleryCountry').value.trim(),
+      email:document.getElementById('galleryEmail').value.trim(),
+      prompt:activeGalleryPrompt,
+    }).toString()
+  }).catch(()=>{});
+}
+
+buildGalleryFilters();
+renderGallery();
+
+
+buildGlossary();
+</script>
+
+<!-- Netlify Forms - static declarations for deploy-time detection -->
+<form name="newsletter" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="newsletter">
+  <input name="email">
+</form>
+<form name="gallery" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="gallery">
+  <input name="type"><input name="text"><input name="name">
+  <input name="country"><input name="email"><input name="prompt">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+

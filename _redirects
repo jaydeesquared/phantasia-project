@@ -1,0 +1,25 @@
+# Clean URLs - /test works as well as /test.html
+/test           /test.html       200
+/learn          /learn.html      200
+/research       /research.html   200
+/projlab        /projlab.html    200
+/blog           /blog.html       200
+/gallery        /gallery.html    200
+/whatnow        /whatnow.html    200
+/videos         /videos.html     200
+/privacy        /privacy.html    200
+/terms          /terms.html      200
+
+# www → non-www canonical redirect
+https://www.thephantasiaproject.com/*  https://thephantasiaproject.com/:splat  301!
+
+# Blog posts
+/blog/i-didnt-know-my-brain-was-different   /blog/i-didnt-know-my-brain-was-different.html   200
+/blog/my-brain-never-switches-off   /blog/my-brain-never-switches-off.html   200
+/blog/we-read-the-same-book   /blog/we-read-the-same-book.html   200
+/blog/things-i-casually-assumed-everyone-could-do   /blog/things-i-casually-assumed-everyone-could-do.html   200
+/blog/what-watching-a-film-together-means   /blog/what-watching-a-film-together-means.html   200
+/blog/why-i-made-this   /blog/why-i-made-this.html   200
+
+# 404 fallback
+/*              /404.html        404
