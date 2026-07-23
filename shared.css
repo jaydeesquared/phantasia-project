@@ -1437,7 +1437,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif}
 }
 .gallery-featured-badge::before{content:'✦'}
 .gallery-card-text{
-  font-family:'Instrument Serif',serif;
+  font-family:'Instrument Sans',sans-serif;
   font-size:1.05rem;line-height:1.7;color:var(--text);
   margin-bottom:1.1rem;
   quotes:"\201C" "\201D";
